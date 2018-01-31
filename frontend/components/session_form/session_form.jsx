@@ -46,27 +46,38 @@ export class SessionForm extends React.Component {
     // Redirect the user to the /#/ route if they are logged in
 
     return (
-      <div>
+      <div className="auth-form-container">
 
-        <h1>{text}</h1>
+        <div className="login-title">
+          <h1>{text}</h1>
+        </div>
+
         {this.renderErrors()}
-        <form onSubmit={this.handleSubmit}>
-          <label>Username
-            <input
-              type='text'
-              value={this.state.username}
-              onChange={this.update('username')}
-              />
-          </label>
-
+        <form onSubmit={this.handleSubmit} className="auth-form">
+          <div className="form-input">
+            <label>Username
+              <br/>
+              <input
+                type='text'
+                value={this.state.username}
+                onChange={this.update('username')}
+                />
+            </label>
+        </div>
+        <br/>
+        <div className="form-input">
           <label>Password
+            <br/>
             <input
               type='password'
               value={this.state.password}
               onChange={this.update('password')}
               />
           </label>
-          <button>Submit</button>
+        </div>
+          <br/>
+          <button>{text}</button>
+          <br/>
           <Link to={newPath}>{textToNewPath}</Link>
         </form>
       </div>
