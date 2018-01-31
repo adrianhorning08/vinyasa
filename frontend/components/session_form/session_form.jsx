@@ -11,23 +11,43 @@ export class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    console.log(this.props);
+  }
+
   update(field) {
     return e => {
       this.setState({[field]: e.target.value});
     };
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error,i) => {
+          return <li key={i}>{error}</li>;
+        })}
+      </ul>
+    );
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state);
+    this.state = {username: '', password: ''};
   }
 
   render() {
     let text = this.props.formType === 'login' ? 'Log In' : 'Sign Up';
-    let path = this.props.path === '/#/login'
+    let newPath = this.props.formType === 'login' ? '/signup' : '/login';
+    let textToNewPath = this.props.formType === 'login' ? 'Sign Up' : 'Log In';
+    // Redirect the user to the /#/ route if they are logged in
+
     return (
       <div>
+        
         <h1>{text}</h1>
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <label>Username
             <input
@@ -45,6 +65,7 @@ export class SessionForm extends React.Component {
               />
           </label>
           <button>Submit</button>
+          <Link to={newPath}>{textToNewPath}</Link>
         </form>
       </div>
     );

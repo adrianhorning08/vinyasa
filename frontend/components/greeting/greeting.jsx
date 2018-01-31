@@ -13,14 +13,13 @@ const personalGreeting = (currentUser, logout) => {
 const sessionLinks = () => {
   return (
     <div>
-      <Link to='/#/signup'>Sign Up</Link>
-      <Link to='/#/login'>Login</Link>
+      <Link to='/signup'>Sign Up</Link>
+      <Link to='/login'>Login</Link>
     </div>
   );
 };
 
 export const Greeting = props => {
-  console.log(props);
   if (props.currentUser) {
     return personalGreeting(props.currentUser, props.logout);
   } else {
