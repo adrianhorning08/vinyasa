@@ -1,5 +1,5 @@
 {
-  "name": "asana_clone",
+  "name": "vinyasa",
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.0",
@@ -15,7 +15,12 @@
     "webpack": "^3.10.0"
   },
   "scripts": {
-    "start": "webpack --watch"
+    "start": "webpack --watch",
+    "postinstall": "webpack"
+  },
+  "engines": {
+    "node": "v6.10.1",
+    "npm": "3.10.10"
   },
   "devDependencies": {
     "redux-devtools-extension": "^2.13.2"
