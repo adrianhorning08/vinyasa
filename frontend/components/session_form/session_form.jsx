@@ -11,8 +11,10 @@ export class SessionForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    console.log(this.props);
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.history.push('/');
+    }
   }
 
   update(field) {
@@ -45,7 +47,7 @@ export class SessionForm extends React.Component {
 
     return (
       <div>
-        
+
         <h1>{text}</h1>
         {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
