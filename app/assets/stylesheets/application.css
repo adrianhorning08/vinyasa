@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ @import 'reset.css';
+
  body {
    font-family: 'Roboto', sans-serif;
  }
@@ -29,10 +31,20 @@
 
 }
 
-header {
+.auth-page {
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
 }
+
+.site-title {
+  color: white;
+  position: fixed;
+  top: 18%;
+  left: 50%;
+  margin-top: -100px; /* Negative half of height. */
+  margin-left: -50px; /
+}
+
 
 .auth-form-container {
   border-radius: 3px;
@@ -44,6 +56,35 @@ header {
   flex-direction: column;
   background-color: white;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+}
+
+.auth-footer {
+  width: 585px;
+  align-items: center;
+  height: 30px;
+  margin-top: 15px;
+  color: white;
+  padding-top: 10px;
+  display: inherit;
+  justify-content: center;
+}
+
+.auth-footer a {
+  border: 1px solid white;
+  background-color: transparent;
+  margin-left: 10px;
+  padding: 10px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 13px;
+  color: white;
+  transition: background 200ms,border 200ms,box-shadow 200ms,color 200ms;
+}
+
+.auth-footer a:hover {
+  background-color: #fff;
+  border-color: #f0f0ff;
+  color: #646f79;
 }
 
 h1 {
@@ -80,6 +121,13 @@ input {
   height: 40px;
   width: 400px;
   padding: 0 0 0 10px;
+  color: black;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #b7bfc6;
+  box-shadow: inset 0px 1px 1px 0px #edf1f2;
 }
 
 button {

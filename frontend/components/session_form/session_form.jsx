@@ -43,44 +43,58 @@ export class SessionForm extends React.Component {
     let text = this.props.formType === 'login' ? 'Log In' : 'Sign Up';
     let newPath = this.props.formType === 'login' ? '/signup' : '/login';
     let textToNewPath = this.props.formType === 'login' ? 'Sign Up' : 'Log In';
-    // Redirect the user to the /#/ route if they are logged in
+    let footerText;
+
+    if (this.props.formType === 'login') {
+      footerText = "Don't have an account?";
+    } else {
+      footerText = "Already have an account?";
+    }
 
     return (
-      <div className="auth-form-container">
-
-        <div className="login-title">
-          <h1>{text}</h1>
+      <div className="auth-page">
+        <div className="site-title">
+          <h1>vinyasa</h1>
         </div>
+        <div className="auth-form-container">
+          <div className="login-title">
+            <h1>{text}</h1>
+          </div>
 
-        {this.renderErrors()}
-        <form onSubmit={this.handleSubmit} className="auth-form">
+          {this.renderErrors()}
+          <form onSubmit={this.handleSubmit} className="auth-form">
+            <div className="form-input">
+              <label>Username
+                <br/>
+                <input
+                  type='text'
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  />
+              </label>
+          </div>
+          <br/>
           <div className="form-input">
-            <label>Username
+            <label>Password
               <br/>
               <input
-                type='text'
-                value={this.state.username}
-                onChange={this.update('username')}
+                type='password'
+                value={this.state.password}
+                onChange={this.update('password')}
                 />
             </label>
-        </div>
-        <br/>
-        <div className="form-input">
-          <label>Password
+          </div>
             <br/>
-            <input
-              type='password'
-              value={this.state.password}
-              onChange={this.update('password')}
-              />
-          </label>
-        </div>
-          <br/>
-          <button>{text}</button>
-          <br/>
-          <Link to={newPath}>{textToNewPath}</Link>
-        </form>
+            <button>{text}</button>
+            <br/>
+          </form>
       </div>
+
+      <div className="auth-footer">
+        <span>{footerText}</span>
+        <Link to={newPath}>{textToNewPath}</Link>
+      </div>
+    </div>
     );
   }
 
