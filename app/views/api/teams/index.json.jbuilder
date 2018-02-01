@@ -1,5 +1,6 @@
 @teams.each do |team|
   json.set! team.id do
-    json.partial 'bench', bench: bench
+    # json.partial 'team', team: team
+    json.extract! team, :id, :name
   end
 end

@@ -1,1 +1,1 @@
-json.extract! team, :id
+json.extract! team, :id, :name
