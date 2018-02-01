@@ -130,6 +130,19 @@ input:focus {
   box-shadow: inset 0px 1px 1px 0px #edf1f2;
 }
 
+.demo{
+  background: #5354C0;
+  margin-left: 13px;
+  border: none;
+}
+
+.demo:hover {
+  box-shadow: inset 0 0 transparent, 0 0 0 3px #5469bf;
+  background: #594fc7;
+  border-color: #594fc7;
+  transition: background 200ms,border 200ms,box-shadow 200ms,color 200ms;
+}
+
 button {
   background: #14aaf5;
   border: 1px solid #14aaf5;
