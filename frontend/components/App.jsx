@@ -10,8 +10,7 @@ const App = () => (
   <Switch>
     <AuthRoute exact path="/login" component={SessionFormContainer} />
     <AuthRoute exact path="/signup" component={SessionFormContainer} />
-    <ProtectedRoute exact path="/dashboard" component={DashboardContainer} />
-    <Redirect to="/dashboard" />
+    <ProtectedRoute path="/dashboard" component={DashboardContainer} />
   </Switch>
 </div>
 );

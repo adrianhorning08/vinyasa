@@ -16,7 +16,7 @@ export class TeamIndex extends React.Component {
       <div className="teams-sidebar">
         <ul>
           {this.props.teams.map(team => {
-            return<li><Link to="/">{team.name}</Link></li>;
+            return<li key={team.id}><Link to="/">{team.name}</Link></li>;
           })}
         </ul>
       </div>
