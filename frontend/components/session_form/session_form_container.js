@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { SessionForm } from './session_form';
-import { login, signup } from '../../actions/session_actions';
+import { login, signup, clearErrors } from '../../actions/session_actions';
 
 // Why don't we need withRouter here? Didn't we need it in the
 // practice test when we were trying to render a different form?
@@ -22,7 +22,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   let processForm = ownProps.match.path === '/login' ? login : signup;
   return {
     processForm: user => dispatch(processForm(user)),
-    login: user => dispatch(login(user))
+    login: user => dispatch(login(user)),
+    clearErrors: () => dispatch(clearErrors())
   };
 };
 

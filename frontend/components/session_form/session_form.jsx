@@ -18,9 +18,6 @@ export class SessionForm extends React.Component {
     }
   }
 
-  componentWillUnMount() {
-    // take this to the session action that will clear the errors
-  }
 
   update(field) {
     return e => {
@@ -49,6 +46,7 @@ export class SessionForm extends React.Component {
     this.props.login({username: 'Luke Skywalker', password: 'password'});
   }
 
+
   render() {
     let text = this.props.formType === 'login' ? 'Log In' : 'Sign Up';
     let newPath = this.props.formType === 'login' ? '/signup' : '/login';
@@ -64,7 +62,7 @@ export class SessionForm extends React.Component {
     return (
       <div className="auth-page">
         <div className="site-title">
-          <h1>vinyasa</h1>
+          <Link to="/dashboard"><h1>vinyasa</h1></Link>
         </div>
         <div className="auth-form-container">
           <div className="login-title">
@@ -104,7 +102,7 @@ export class SessionForm extends React.Component {
 
       <div className="auth-footer">
         <span>{footerText}</span>
-        <Link to={newPath}>{textToNewPath}</Link>
+        <Link to={newPath} onClick={this.props.clearErrors}>{textToNewPath}</Link>
       </div>
     </div>
     );

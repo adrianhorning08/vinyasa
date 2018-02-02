@@ -230,6 +230,10 @@
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
 }
 
+.auth-form-container li{
+  color: red;
+}
+
 .form-input {
   margin-top: 30px;
   text-align: left;

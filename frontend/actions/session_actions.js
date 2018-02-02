@@ -15,6 +15,10 @@ const receiveErrors = errors => {
   };
 };
 
+export const clearErrors = () => dispatch => {
+  return dispatch(receiveErrors([]));
+};
+
 const receiveCurrentUser = currentUser => {
   return {
     type: RECEIVE_CURRENT_USER,
