@@ -18,6 +18,10 @@ export class SessionForm extends React.Component {
     }
   }
 
+  componentWillUnMount() {
+    // take this to the session action that will clear the errors
+  }
+
   update(field) {
     return e => {
       this.setState({[field]: e.target.value});

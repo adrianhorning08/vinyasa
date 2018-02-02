@@ -20,7 +20,150 @@
    font-family: 'Roboto', sans-serif;
  }
 
-#root {
+ h1 {
+   font-weight: 400;
+   font-size: 32px;
+ }
+
+ label {
+   font-size: 11px;
+   font-weight: 200;
+   text-transform: uppercase;
+   color: #848f99;
+   margin-bottom: 7px;
+   letter-spacing: 0.5px;
+ }
+
+ input {
+   border: 1px solid #d5dce0;
+   border-radius: 3px;
+   height: 40px;
+   width: 400px;
+   padding: 0 0 0 10px;
+   color: black;
+   font-size: 14px;
+ }
+
+ input:focus {
+   border-color: #b7bfc6;
+   box-shadow: inset 0px 1px 1px 0px #edf1f2;
+ }
+
+ button {
+   background: #14aaf5;
+   border: 1px solid #14aaf5;
+   height: 40px;
+   line-height: 40px;
+   padding: 0 15px;
+   color: white;
+   align-items: center;
+   border-radius: 3px;
+   cursor: pointer;
+   font-size: 13px;
+ }
+
+ button:hover {
+   box-shadow: inset 0 0 transparent, 0 0 0 3px #95e0ff;
+   background: #32c1ff;
+   border-color: #32c1ff;
+   transition: background 200ms,border 200ms,box-shadow 200ms,color 200ms;
+ }
+
+/* main app view '/' */
+ .vinyasa_ui {
+   display: flex;
+   flex: 1;
+   min-height: 1px;
+   overflow: hidden;
+   bottom: 0;
+   left: 0;
+   overflow-x: auto;
+   overflow-y: hidden;
+   position: fixed;
+   right: 0;
+   top: 0;
+   z-index: 0;
+ }
+
+ .vinyasa_main {
+   display: flex;
+   flex: 1;
+   flex-direction: column;
+   min-width: 1px;
+   position: relative;
+   z-index: 0;
+ }
+
+ .vinyasa_main_body_container {
+   background: red;
+   opacity: .5;
+   display: flex;
+   flex: 1 1 auto;
+   flex-direction: column;
+   min-height: 1px;
+   position: relative;
+   z-index: 0;
+ }
+
+ .sidebar {
+   background: #242B36;
+   display: flex;
+   flex-direction: column;
+   width: 244px;
+   color: #fff;
+   overflow: auto;
+ }
+
+ .teams-sidebar {
+   display: block;
+   padding: 10px;
+   width: inherit;
+ }
+
+ .teams-sidebar li {
+   font-weight: 200;
+   font-size: 13px;
+   padding: 5px;
+   cursor: pointer;
+   overflow: hidden;
+ }
+
+ .teams-sidebar li:hover {
+   background-color: #646f79;
+ }
+
+ .sidebar-title {
+   border-bottom: 1px solid #646f79;
+   font-size: 16px;
+   padding-bottom: 5px;
+   color: #9ca6af;
+   padding: 5px 10px 5px;
+ }
+
+ .sidebar-logo {
+   background-image: url("https://d3ki9tyy5l5ruj.cloudfront.net/obj/3ac85a538c3fc5bb08d0206ede04ae8aa13c20b2/inapp__logo_color_ondark_horizontal.svg");
+   background-repeat: no-repeat;
+   align-items: center;
+   background-position: 13px 10px;
+   display: flex;
+   height: 40px;
+   flex-shrink: 0;
+   justify-content: flex-end;
+   background-size: 110px;
+ }
+
+ .topbar {
+   background: green;
+   min-width: 920px;
+   height: 41px;
+   flex-shrink: 0;
+   position: relative;
+   display: block;
+   z-index: 2;
+ }
+
+/* auth stuff */
+.auth-page {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,11 +171,6 @@
   min-height: 100vh;
   width: 100%;
   overflow: hidden;
-
-}
-
-.auth-page {
-  display: flex;
   flex-direction: column;
 }
 
@@ -42,20 +180,7 @@
   top: 18%;
   left: 50%;
   margin-top: -100px; /* Negative half of height. */
-  margin-left: -50px; 
-}
-
-
-.auth-form-container {
-  border-radius: 3px;
-  width: 585px;
-  height: 562px;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+  margin-left: -50px;
 }
 
 .auth-footer {
@@ -87,23 +212,22 @@
   color: #646f79;
 }
 
-h1 {
-  font-weight: 400;
-  font-size: 32px;
-}
-
 .login-title {
   line-height: 40px;
   padding: 80px 30px 30px;
 }
 
-label {
-  font-size: 11px;
-  font-weight: 200;
-  text-transform: uppercase;
-  color: #848f99;
-  margin-bottom: 7px;
-  letter-spacing: 0.5px;
+/* auth form */
+.auth-form-container {
+  border-radius: 3px;
+  width: 585px;
+  height: 562px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
 }
 
 .form-input {
@@ -113,21 +237,6 @@ label {
 
 .form-input label {
   margin-bottom: 7px;
-}
-
-input {
-  border: 1px solid #d5dce0;
-  border-radius: 3px;
-  height: 40px;
-  width: 400px;
-  padding: 0 0 0 10px;
-  color: black;
-  font-size: 14px;
-}
-
-input:focus {
-  border-color: #b7bfc6;
-  box-shadow: inset 0px 1px 1px 0px #edf1f2;
 }
 
 .demo{
@@ -140,25 +249,5 @@ input:focus {
   box-shadow: inset 0 0 transparent, 0 0 0 3px #5469bf;
   background: #594fc7;
   border-color: #594fc7;
-  transition: background 200ms,border 200ms,box-shadow 200ms,color 200ms;
-}
-
-button {
-  background: #14aaf5;
-  border: 1px solid #14aaf5;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 15px;
-  color: white;
-  align-items: center;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-button:hover {
-  box-shadow: inset 0 0 transparent, 0 0 0 3px #95e0ff;
-  background: #32c1ff;
-  border-color: #32c1ff;
   transition: background 200ms,border 200ms,box-shadow 200ms,color 200ms;
 }
