@@ -4,9 +4,8 @@ import { TeamShow } from './team_show';
 import { fetchTeam } from '../../../actions/team_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(ownProps);
   return {
-
+    team: state.teams[ownProps.match.params.teamId]
   };
 };
 

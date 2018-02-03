@@ -1,6 +1,6 @@
 import React from 'react';
 import { TeamIndexItem } from './team_index_item';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 export class TeamIndex extends React.Component {
   constructor(props) {
@@ -16,7 +16,11 @@ export class TeamIndex extends React.Component {
       <div className="teams-sidebar">
         <ul>
           {this.props.teams.map(team => {
-            return<li key={team.id}><Link to="/">{team.name}</Link></li>;
+            return <li key={team.id}>
+              <Link to={`/dashboard/teams/${team.id}`}>
+                {team.name}
+              </Link>
+            </li>;
           })}
         </ul>
       </div>

@@ -18,7 +18,7 @@ export const Dashboard = (props) => {
         <div className="topbar">
         </div>
         <div className="vinyasa_main_body_container">
-          <Route exact path="/dashboard/teams/:id" component={TeamShowContainer}/>
+          <Route exact path="/dashboard/teams/:teamId" component={TeamShowContainer}/>
           <GreetingContainer/>
         </div>
       </div>
