@@ -16,10 +16,12 @@ export const Dashboard = (props) => {
 
       <div className="vinyasa_main">
         <div className="topbar">
+          <GreetingContainer/>
+        </div>
+        <div className="page-header">
         </div>
         <div className="vinyasa_main_body_container">
           <Route exact path="/dashboard/teams/:teamId" component={TeamShowContainer}/>
-          <GreetingContainer/>
         </div>
       </div>
     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { TeamShow } from './team_show';
 import { fetchTeam } from '../../../actions/team_actions';
+import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -15,7 +16,10 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(TeamShow);
+)(TeamShow));
+
+// wrapped with withRouter
+// force the route to re-render
