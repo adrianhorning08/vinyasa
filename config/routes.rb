@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :teams, except: [:new, :edit]
 
-    resouces :teams do
+    resources :teams do
       resources :users, only: [:index, :destroy]
     end
   end

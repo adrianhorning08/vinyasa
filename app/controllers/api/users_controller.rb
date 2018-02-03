@@ -9,6 +9,16 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def index
+    team_id = params[:team_id]
+
+   if team_id
+     @users = User.includes(:teams).where(teams: {id: team_id})
+   else
+     @users = User.all
+   end
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :password)
