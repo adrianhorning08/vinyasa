@@ -4,7 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 import {login} from './actions/session_actions';
 import { fetchTeams, fetchTeam, createTeam, deleteTeam } from './actions/team_actions';
-import {fetchTeamMembers} from './util/team_members.js';
+import {fetchTeamMembers} from './util/team_api_util.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');

@@ -19,7 +19,7 @@ User.create!(
 )
 
 User.create!(
-  username: 'Leia',
+  username: 'Leia Organa',
   password: 'password'
 )
 
