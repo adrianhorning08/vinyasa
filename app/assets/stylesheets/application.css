@@ -21,7 +21,6 @@
  }
 
  h1 {
-   font-weight: 400;
    font-size: 32px;
  }
 
@@ -118,43 +117,46 @@
    overflow: auto;
  }
 
- .teams-sidebar {
-   display: block;
-   padding: 10px;
-   width: inherit;
-   padding: 2px 0 10px 10px;
+ .sidebar-section {
+
  }
 
- .teams-sidebar li {
+.sidebar-title {
+   border-bottom: 1px solid #646f79;
+   font-size: 16px;
+   padding-bottom: 5px;
+   color: #9ca6af;
+   padding: 5px 10px 5px 15px;
+   display: flex;
+   font-size: 16px;
+   font-weight: 400;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-top: 20px;
+ }
+
+.sidebar-list {
+  display: block;
+  padding: 10px;
+  width: inherit;
+  padding: 2px 0 10px 10px;
+  margin-top: 10px;
+}
+
+.sidebar-list li {
    font-weight: 200;
    font-size: 13px;
    cursor: pointer;
    overflow: hidden;
- }
+}
 
- .teams-sidebar li a {
+ .sidebar-list li a {
    display: block;
    padding: 5px;
  }
 
- .teams-sidebar li:hover {
+ .sidebar-list li:hover {
    background-color: #646f79;
- }
-
- /* .sidebar-title {
-   font-size: 16px;
-   padding-bottom: 5px;
-   color: #9ca6af;
-   padding: 10px 13px 5px;
-   width: 219px;
- } */
-
- .sidebar-section {
-   color: #9ca6af;
-   margin-bottom: 5px;
-   margin-top: 15px;
-   padding: 0 10px 8px 15px;
-   border-bottom: 1px solid #646f79;
  }
 
  .PlusIcon {

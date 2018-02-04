@@ -13,7 +13,17 @@ export class TeamIndex extends React.Component {
 
   render() {
     return (
-      <div className="teams-sidebar">
+
+      <div className="sidebar-section">
+        <div className="sidebar-title">
+          <p>Teams</p>
+          <svg className="Icon PlusIcon" viewBox="0 0 32 32"
+            height="10" width="10">
+            <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18">
+            </polygon>
+          </svg>
+      </div>
+      <div className="sidebar-list">
         <ul>
           {this.props.teams.map(team => {
             return <li key={team.id}>
@@ -24,6 +34,7 @@ export class TeamIndex extends React.Component {
           })}
         </ul>
       </div>
+    </div>
     );
   }
 }
