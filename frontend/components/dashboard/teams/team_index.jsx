@@ -39,17 +39,30 @@ export class TeamIndex extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
+    this.props.clearTeamErrors();
   }
 
   openModal() {
     this.setState({modalIsOpen: true});
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error,i) => {
+          return <li key={i}>{error}</li>;
+        })}
+      </ul>
+    );
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.createTeam(this.state);
+    if (this.state.name.length > 0) {
+      this.closeModal();
+    }
     this.setState({name: ''});
-    this.closeModal();
   }
 
   render() {
@@ -94,6 +107,7 @@ export class TeamIndex extends React.Component {
                </polygon>
              </svg>
            </header>
+           {this.renderErrors()}
            <label>Name
              <br/>
              <input

@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 // testing
   window.dispatch = store.dispatch;
-  window.getState = store.dispatch;
+  window.getState = store.getState;
   window.fetchTeamMembers = fetchTeamMembers;
   window.createTeam = createTeam;
   ReactDOM.render(<Root store={store}/>, root);

@@ -197,6 +197,12 @@
    margin-right: 20px;
  }
 
+ .modal-form ul {
+   color: red;
+   display: flex;
+   align-items: center;
+ }
+
  .modal-form button {
    margin-top: 20px;
    float: right;
