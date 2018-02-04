@@ -1,10 +1,10 @@
 # == Schema Information
 #
-# Table name: team_memberships
+# Table name: project_memberships
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer          not null
-#  team_id    :integer          not null
+#  project_id :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -13,8 +13,8 @@
 
 one:
   user_id: 1
-  team_id: 1
+  project_id: 1
 
 two:
   user_id: 1
-  team_id: 1
+  project_id: 1

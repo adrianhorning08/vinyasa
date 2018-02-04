@@ -8,6 +8,8 @@
 Team.delete_all
 User.delete_all
 TeamMembership.delete_all
+ProjectMembership.delete_all
+Project.delete_all
 
 luke = User.create!(
   username: 'Luke Skywalker',
@@ -145,5 +147,3 @@ TeamMembership.create!(
   user_id: palpatine.id,
   team_id: sith.id
 )
-
-# next time maybe do an enumerable over this stuff

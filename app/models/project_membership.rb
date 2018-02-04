@@ -1,18 +1,17 @@
 # == Schema Information
 #
-# Table name: team_memberships
+# Table name: project_memberships
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer          not null
-#  team_id    :integer          not null
+#  project_id :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-require 'test_helper'
+class ProjectMembership < ApplicationRecord
+  validates :user_id, :project_id, presence: true
 
-class TeamMembershipTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  belongs_to :user
+  belongs_to :project
 end
