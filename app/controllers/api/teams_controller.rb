@@ -35,6 +35,9 @@ class Api::TeamsController < ApplicationController
 
   def destroy
     @team = Team.find_by(id: params[:id])
+    # Ryan doesn't have @project.destroy, so if theres a bug,
+    # that might be it
+    @team.destroy
     render "api/teams/show"
   end
 
