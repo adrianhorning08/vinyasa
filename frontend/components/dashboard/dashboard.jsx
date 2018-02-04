@@ -3,6 +3,7 @@ import TeamIndexContainer from './teams/team_index_container';
 import GreetingContainer from './greeting/greeting_container';
 import TeamShowContainer from './teams/team_show_container';
 import {Route, Redirect} from 'react-router-dom';
+import HeaderTextContainer from './header_text/header_text_container';
 
 
 export const Dashboard = (props) => {

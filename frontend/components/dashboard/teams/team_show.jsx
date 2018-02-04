@@ -3,8 +3,6 @@ import React from 'react';
 export class TeamShow extends React.Component {
   constructor(props) {
     super(props);
-    // Uh, why do I need to log something here in order
-    // for this to work??
   }
 
   componentWillReceiveProps(nextProps) {
@@ -22,16 +20,18 @@ export class TeamShow extends React.Component {
       let team = this.props.team;
       if (team.members) {
         return (
-          <div className="teams-show">
-            <h1>{team.name}</h1>
-            <div className="teams-show-members">
-              <h3>Members</h3>
-              <ul>
-                {team.members.map(member => {
-                  return <li key={member.id* Math.random()}>{member.username}</li>;
-                })}
-              </ul>
-          </div>
+          <div className="show-page-index">
+            <div className="show-page-index-header">
+              <h1>{team.name}</h1>
+            </div>
+              <div className="show-page-index-list">
+                <h3>Members</h3>
+                <ul>
+                  {team.members.map(member => {
+                    return <li key={member.id* Math.random()}>{member.username}</li>;
+                  })}
+                </ul>
+            </div>
           </div>
         );
       }

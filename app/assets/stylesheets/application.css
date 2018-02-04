@@ -263,15 +263,22 @@
    margin-left: 10px;
  }
 
- /* Show items */
- .teams-show {
+ .show-page-index {
    display: flex;
    flex-direction: column;
    align-items: center;
    padding-top: 10px;
  }
 
- .teams-show-members {
+ .show-page-index-header {
+   position: fixed;
+   top: 7%;
+   left: 52%;
+   right: 50%;
+   width: 100%;
+ }
+
+ .show-page-index-list {
    border-radius: 3px 3px 0 0;
    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
    padding: 10px;
@@ -280,10 +287,10 @@
    flex-direction: column;
    align-items: center;
    width: 200px;
-
  }
 
- .teams-show-members h3{
+
+ .show-page-index-list h3{
    margin-top: 10px;
    padding-bottom: 5px;
    border-bottom: 1px solid gray;
@@ -292,7 +299,7 @@
    text-align: center;
  }
 
- .teams-show-members li{
+ .show-page-index-list li{
    padding: 7px;
  }
 
