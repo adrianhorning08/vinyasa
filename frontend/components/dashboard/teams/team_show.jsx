@@ -28,7 +28,7 @@ export class TeamShow extends React.Component {
               <h3>Members</h3>
               <ul>
                 {team.members.map(member => {
-                  return <li key={member.id}>{member.username}</li>;
+                  return <li key={member.id* Math.random()}>{member.username}</li>;
                 })}
               </ul>
           </div>

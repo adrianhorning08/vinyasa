@@ -122,27 +122,59 @@
    display: block;
    padding: 10px;
    width: inherit;
+   padding: 2px 0 10px 10px;
  }
 
  .teams-sidebar li {
    font-weight: 200;
    font-size: 13px;
-   padding: 5px;
    cursor: pointer;
    overflow: hidden;
+ }
+
+ .teams-sidebar li a {
+   display: block;
+   padding: 5px;
  }
 
  .teams-sidebar li:hover {
    background-color: #646f79;
  }
 
- .sidebar-title {
-   border-bottom: 1px solid #646f79;
+ /* .sidebar-title {
    font-size: 16px;
    padding-bottom: 5px;
    color: #9ca6af;
-   padding: 5px 10px 5px;
+   padding: 10px 13px 5px;
    width: 219px;
+ } */
+
+ .sidebar-section {
+   color: #9ca6af;
+   margin-bottom: 5px;
+   margin-top: 15px;
+   padding: 0 10px 8px 15px;
+   border-bottom: 1px solid #646f79;
+ }
+
+ .PlusIcon {
+   background: transparent;
+   border: 1px solid #9ca6af;
+   color: #9ca6af;
+   fill: #9ca6af;
+   float: right;
+   margin-top: -2px;
+   overflow: hidden;
+   border-radius: 50%;
+   padding: 2px;
+   cursor: pointer;
+ }
+
+ .PlusIcon:hover {
+   background: #fff;
+   color: #9ca6af;
+   fill: #9ca6af;
+   transition: background 300ms,border 200ms,box-shadow 200ms,color 200ms;
  }
 
  .sidebar-logo {

@@ -118,11 +118,6 @@ TeamMembership.create!(
 )
 
 TeamMembership.create!(
-  user_id: luke.id,
-  team_id: jedi.id
-)
-
-TeamMembership.create!(
   user_id: vader.id,
   team_id: empire.id
 )
@@ -150,3 +145,5 @@ TeamMembership.create!(
   user_id: palpatine.id,
   team_id: sith.id
 )
+
+# next time maybe do an enumerable over this stuff

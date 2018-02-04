@@ -10,7 +10,14 @@ export const Dashboard = (props) => {
     <div className="vinyasa_ui">
       <div className="sidebar">
         <div className="sidebar-logo"></div>
-        <span className="sidebar-title">Teams</span>
+        <div class="sidebar-section">
+          <span className="sidebar-title">Teams</span>
+          <svg className="Icon PlusIcon" viewBox="0 0 32 32"
+            height="10" width="10">
+            <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18">
+            </polygon>
+          </svg>
+        </div>
         <TeamIndexContainer/>
       </div>
 
