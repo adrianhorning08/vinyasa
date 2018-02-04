@@ -2,7 +2,6 @@ import React from 'react';
 import { TeamIndexItem } from './team_index_item';
 import { Link, Redirect } from 'react-router-dom';
 import Modal from 'react-modal';
-import NewTeamFormContainer from './new_team_form_container';
 
 const customStyles = {
   content : {
