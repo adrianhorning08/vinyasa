@@ -27,3 +27,10 @@ export const deleteTeam = (id) => {
     url: `api/teams/${id}`
   });
 };
+
+// export const createTeamMembership = (user_id, team_id) => {
+//   return $.ajax({
+//     method: 'POST',
+//     url:
+//   })
+// }

@@ -38,7 +38,7 @@ export class TeamIndex extends React.Component {
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({name: '', modalIsOpen: false});
     this.props.clearTeamErrors();
   }
 
