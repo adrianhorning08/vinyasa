@@ -179,6 +179,26 @@
    transition: background 300ms,border 200ms,box-shadow 200ms,color 200ms;
  }
 
+ .modal-form label input {
+   margin-right: 20px;
+ }
+
+ .modal-form button {
+
+ }
+
+ .dialog-header {
+   color: #151b26;
+   font-size: 24px;
+   font-weight: 500;
+   line-height: 1.2;
+   border-bottom: 1px solid #e0e6e8;
+   border-radius: 3px 3px 0 0;
+   padding: 10px 20px;
+   position: relative;
+   margin-bottom: 15px;
+ }
+
  .sidebar-logo {
    background-image: url("https://d3ki9tyy5l5ruj.cloudfront.net/obj/3ac85a538c3fc5bb08d0206ede04ae8aa13c20b2/inapp__logo_color_ondark_horizontal.svg");
    background-repeat: no-repeat;
