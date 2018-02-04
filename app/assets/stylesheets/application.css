@@ -159,6 +159,20 @@
    background-color: #646f79;
  }
 
+ .XIcon {
+   height: 16px;
+   width: 16px;
+   cursor: pointer;
+   position: absolute;
+   right: 15px;
+   top: 15px;
+   fill: #b7bfc6;
+ }
+
+ .XIcon:hover {
+   fill: #32c1ff;
+ }
+
  .PlusIcon {
    background: transparent;
    border: 1px solid #9ca6af;
@@ -189,14 +203,14 @@
    margin-right: 20px;
  }
 
- .dialog-header {
+ .modal-form-header {
    color: #151b26;
    font-size: 24px;
    font-weight: 500;
    line-height: 1.2;
    border-bottom: 1px solid #e0e6e8;
    border-radius: 3px 3px 0 0;
-   padding: 10px 20px;
+   padding: 10px 20px 0 0;
    position: relative;
    margin-bottom: 15px;
  }
