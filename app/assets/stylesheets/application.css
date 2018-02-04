@@ -187,6 +187,39 @@
    margin-left: 10px;
  }
 
+ /* Show items */
+ .teams-show {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding-top: 10px;
+ }
+
+ .teams-show-members {
+   border-radius: 3px 3px 0 0;
+   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+   padding: 10px;
+   background: #fff;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 200px;
+
+ }
+
+ .teams-show-members h3{
+   margin-top: 10px;
+   padding-bottom: 5px;
+   border-bottom: 1px solid gray;
+   width: 100%;
+   margin-bottom: 8px;
+   text-align: center;
+ }
+
+ .teams-show-members li{
+   padding: 7px;
+ }
+
 /* auth stuff */
 .auth-page {
   display: flex;

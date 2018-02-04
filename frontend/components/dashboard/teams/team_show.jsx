@@ -22,11 +22,16 @@ export class TeamShow extends React.Component {
       let team = this.props.team;
       if (team.members) {
         return (
-          <div>
-            {team.name}
-            {team.members.map(member => {
-              return member.username;
-            })}
+          <div className="teams-show">
+            <h1>{team.name}</h1>
+            <div className="teams-show-members">
+              <h3>Members</h3>
+              <ul>
+                {team.members.map(member => {
+                  return <li key={member.id}>{member.username}</li>;
+                })}
+              </ul>
+          </div>
           </div>
         );
       }

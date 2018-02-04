@@ -12,7 +12,6 @@ class Api::TeamsController < ApplicationController
 
   def index
     @teams = Team.all
-    # This is what I wasnt doing before (below)
     # Why do you want to do this even?
     # For example, when do you render Json vs. rendering this way
     render "api/teams/index"
