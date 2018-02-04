@@ -147,3 +147,113 @@ TeamMembership.create!(
   user_id: palpatine.id,
   team_id: sith.id
 )
+
+blow_up_death_star = Project.create!(
+  title: 'Blow up the Death Star',
+  team_id: alliance.id
+)
+
+peace = Project.create!(
+  title: 'Bring peace to the Galaxy',
+  team_id: alliance.id
+)
+
+hoth = Project.create!(
+  title: 'Defend Hoth Base',
+  team_id: rogue.id
+)
+
+attack_death_star = Project.create!(
+  title: 'Attack the Death Star',
+  team_id: rogue.id
+)
+
+dominate = Project.create!(
+  title: 'Galatic Domination',
+  team_id: empire.id
+)
+
+destroy_sith = Project.create!(
+  title: 'Destroy the Sith',
+  team_id: jedi.id
+)
+
+train_luke = Project.create!(
+  title: 'Train Luke to become a Jedi',
+  team_id: jedi.id
+)
+
+destroy_jedi = Project.create!(
+  title: 'Destroy the Jedi',
+  team_id: sith.id
+)
+
+convert_luke = Project.create!(
+  title: 'Convert Luke to Dark Side',
+  team_id: empire.id
+)
+
+teach_stormtroopers = Project.create!(
+  title: 'Teach Stormtroopers how to shoot',
+  team_id: empire.id
+)
+
+alliance.members.each do |member|
+  ProjectMembership.create!(
+    user_id: member.id,
+    project_id: blow_up_death_star.id)
+end
+
+alliance.members.each do |member|
+  ProjectMembership.create!(
+    user_id: member.id,
+    project_id: peace.id)
+end
+
+rogue.members.each do |member|
+  ProjectMembership.create!(
+    user_id: member.id,
+    project_id: hoth.id)
+end
+
+rogue.members.each do |member|
+  ProjectMembership.create!(
+    user_id: member.id,
+    project_id: attack_death_star.id)
+end
+
+empire.members.each do |member|
+  ProjectMembership.create!(
+    user_id: member.id,
+    project_id: dominate.id)
+end
+
+empire.members.each do |member|
+  ProjectMembership.create!(
+    user_id: member.id,
+    project_id: convert_luke.id)
+end
+
+empire.members.each do |member|
+  ProjectMembership.create!(
+    user_id: member.id,
+    project_id: destroy_jedi.id)
+end
+
+jedi.members.each do |member|
+  ProjectMembership.create!(
+    user_id: member.id,
+    project_id: destroy_sith.id)
+end
+
+jedi.members.each do |member|
+  ProjectMembership.create!(
+    user_id: member.id,
+    project_id: train_luke.id)
+end
+
+empire.members.each do |member|
+  ProjectMembership.create!(
+    user_id: member.id,
+    project_id: teach_stormtroopers.id)
+end
