@@ -63,7 +63,7 @@ export class Sidebar extends React.Component {
   render() {
     return (
       <div className="sidebar-section">
-      <Route exact path="/dashboard/teams/:teamId" component={ProjectIndexContainer}/>
+      <Route path="/dashboard/teams/:teamId" component={ProjectIndexContainer}/>
         <Modal
            isOpen={this.state.modalIsOpen}
            onAfterOpen={this.afterOpenModal}

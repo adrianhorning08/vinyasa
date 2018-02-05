@@ -6,23 +6,28 @@ import HeaderTextContainer from './header_text/header_text_container';
 import TopbarContainer from './topbar/topbar_container';
 import ProjectIndexContainer from '../project/project_index_container';
 
+export class Dashboard extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-export const Dashboard = (props) => {
-  return (
-    <div className="vinyasa_ui">
-      <div className="sidebar">
-        <div className="sidebar-logo"></div>
-        <SidebarContainer/>
-        <Route exact path="/dashboard/teams/:teamId" component={TeamShowContainer}/>
-      </div>
+  render() {
+    return (
+      <div className="vinyasa_ui">
+        <div className="sidebar">
+          <div className="sidebar-logo"></div>
+          <SidebarContainer/>
+          <Route path="/dashboard/teams/:teamId" component={TeamShowContainer}/>
+        </div>
 
-      <div className="vinyasa_main">
-      <TopbarContainer/>
-        <div className="page-header">
-        </div>
-        <div className="vinyasa_main_body_container">
+        <div className="vinyasa_main">
+        <TopbarContainer/>
+          <div className="page-header">
+          </div>
+          <div className="vinyasa_main_body_container">
+          </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}

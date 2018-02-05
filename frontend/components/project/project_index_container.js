@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ProjectIndex } from './project_index';
 import { fetchProjects } from '../../actions/project_actions';
-import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -16,7 +15,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProjectIndex));
+)(ProjectIndex);
