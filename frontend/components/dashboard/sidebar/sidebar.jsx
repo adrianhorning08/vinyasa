@@ -1,6 +1,5 @@
 import React from 'react';
 import Modal from 'react-modal';
-import TeamIndexContainer from './teams/team_index_container';
 
 
 
@@ -77,7 +76,6 @@ export class Sidebar extends React.Component {
             </polygon>
           </svg>
       </div>
-      <TeamIndexContainer/>
         <Modal
            isOpen={this.state.modalIsOpen}
            onAfterOpen={this.afterOpenModal}

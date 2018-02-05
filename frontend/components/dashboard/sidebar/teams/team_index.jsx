@@ -13,8 +13,9 @@ export class TeamIndex extends React.Component {
 
   render() {
     return (
-      <div className="sidebar-list">
-        <ul>
+      <div className="topbar-dropdown">
+        <ul className="dropdown-content">
+          <h4>Teams</h4>
           {this.props.teams.map(team => {
             return <li key={team.id}>
               <Link to={`/dashboard/teams/${team.id}`}>

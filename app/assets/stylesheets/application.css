@@ -242,7 +242,6 @@
    position: relative;
    display: block;
    z-index: 2;
-   overflow: hidden;
  }
 
  .topbar-right {
@@ -262,6 +261,43 @@
    padding: 5px 5px;
    margin-left: 10px;
  }
+
+ .topbar-right p {
+   cursor: pointer;
+ }
+
+ .topbar-right p:hover {
+   color: #14aaf5;
+ }
+
+ .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li a{
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background: #14aaf5;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
  .show-page-index {
    display: flex;

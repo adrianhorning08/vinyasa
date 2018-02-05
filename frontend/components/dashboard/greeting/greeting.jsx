@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 const personalGreeting = (currentUser, logout) => {
   return (
     <div className="topbar-right">
-      <p>Welcome, {currentUser.username}!</p>
-      <button onClick={logout}>Logout</button>
+
     </div>
   );
 };
