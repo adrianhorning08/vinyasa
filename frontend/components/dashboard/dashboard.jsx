@@ -4,6 +4,7 @@ import TeamShowContainer from './sidebar/teams/team_show_container';
 import {Route, Redirect} from 'react-router-dom';
 import HeaderTextContainer from './header_text/header_text_container';
 import TopbarContainer from './topbar/topbar_container';
+import ProjectIndexContainer from '../project/project_index_container';
 
 
 export const Dashboard = (props) => {

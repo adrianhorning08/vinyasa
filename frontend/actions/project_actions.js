@@ -5,8 +5,8 @@ export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 export const RECEIVE_PROJECT_ERRORS = 'RECEIVE_PROJECT_ERRORS';
 
-export const fetchProjects = () => dispatch => {
-  return APIutil.fetchProjects().then(serverProjects =>
+export const fetchProjects = (team_id) => dispatch => {
+  return APIutil.fetchProjects(team_id).then(serverProjects =>
     dispatch(receiveAllProjects(serverProjects)));
 };
 

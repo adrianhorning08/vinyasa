@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import ProjectIndexContainer from '../../project/project_index_container';
+import {Route, Redirect} from 'react-router-dom';
 
 const customStyles = {
   content : {
@@ -62,7 +63,7 @@ export class Sidebar extends React.Component {
   render() {
     return (
       <div className="sidebar-section">
-        <ProjectIndexContainer/>
+      <Route exact path="/dashboard/teams/:teamId" component={ProjectIndexContainer}/>
         <Modal
            isOpen={this.state.modalIsOpen}
            onAfterOpen={this.afterOpenModal}

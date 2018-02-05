@@ -2,8 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { ProjectIndex } from './project_index';
 import { fetchProjects } from '../../actions/project_actions';
+import { withRouter } from 'react-router';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
     projects: Object.values(state.projects)
   };
@@ -11,11 +12,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProjects: () => dispatch(fetchProjects())
+    fetchProjects: (team_id) => dispatch(fetchProjects(team_id))
   };
 };
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ProjectIndex);
+)(ProjectIndex));

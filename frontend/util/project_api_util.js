@@ -1,7 +1,7 @@
-export const fetchProjects = () => {
+export const fetchProjects = (team_id) => {
   return $.ajax({
     method: 'GET',
-    url: 'api/projects'
+    url: `api/teams/${team_id}/projects`
   });
 };
 

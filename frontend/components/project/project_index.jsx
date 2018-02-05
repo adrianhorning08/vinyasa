@@ -6,8 +6,15 @@ export class ProjectIndex extends React.Component {
     super(props);
   }
 
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
+    if (this.props.match.params.teamId !== nextProps.match.params.teamId) {
+      this.props.fetchProjects(nextProps.team.id);
+    }
+  }
+
   componentDidMount() {
-    this.props.fetchProjects();
+    this.props.fetchProjects(this.props.match.params.teamId);
   }
 
   render() {
@@ -19,7 +26,7 @@ export class ProjectIndex extends React.Component {
         <div className="sidebar-list">
           <ul>
             {this.props.projects.map(project => {
-              return <li key={project.id}>
+              return <li key={project.id * Math.random()}>
                 <Link to={`/dashboard/projects/${project.id}`}>
                   {project.title}
                 </Link>
