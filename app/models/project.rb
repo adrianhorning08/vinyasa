@@ -14,7 +14,7 @@ class Project < ApplicationRecord
   validates :title, presence: true
 
   has_many :project_memberships
-  has_many :members,
+  has_many :users,
     through: :project_memberships,
     source: :user
 end
