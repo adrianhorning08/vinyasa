@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import {login} from './actions/session_actions';
-import { fetchProjects, fetchProject, createProject, deleteProject } from './util/project_api_util.js';
+import { fetchProjects, fetchProject, createProject, deleteProject } from './actions/project_actions.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');

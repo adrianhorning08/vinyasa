@@ -41,3 +41,19 @@ const receiveProjectErrors = errors => {
     errors
   };
 };
+
+export const clearProjectErrors = () => dispatch => {
+  return dispatch(receiveProjectErrors([]));
+};
+
+export const deleteProject = id => dispatch => {
+  return APIutil.deleteProject(id).then(serverProject =>
+  dispatch(receiveProject(serverProject)));
+};
+
+const removeProject = project => {
+  return {
+    type: REMOVE_PROJECT,
+    project
+  };
+};
