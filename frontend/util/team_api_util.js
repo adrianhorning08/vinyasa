@@ -15,7 +15,7 @@ export const fetchTeam = (id) => {
 export const createTeam = (team) => {
   return $.ajax({
     method: 'POST',
-    url: `api/teams/`,
+    url: `api/teams`,
     data: { team }
   });
 };

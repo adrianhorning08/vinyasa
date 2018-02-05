@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 import {login} from './actions/session_actions';
-import { fetchTeams, fetchTeam, createTeam, deleteTeam } from './actions/team_actions';
-import {fetchTeamMembers} from './util/team_api_util.js';
+import { fetchProjects, fetchProject, createProject, deleteProject } from './util/project_api_util.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -20,7 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // testing
   window.dispatch = store.dispatch;
   window.getState = store.getState;
-  window.fetchTeamMembers = fetchTeamMembers;
-  window.createTeam = createTeam;
+  window.fetchProjects = fetchProjects;
+  window.fetchProject = fetchProject;
+  window.createProject = createProject;
+  window.deleteProject = deleteProject;
   ReactDOM.render(<Root store={store}/>, root);
 });
