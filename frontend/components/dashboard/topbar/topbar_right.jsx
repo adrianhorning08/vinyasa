@@ -10,8 +10,15 @@ export class TopbarRight extends React.Component {
     return (
       <div className="topbar-right">
         <div className="dropdown">
-          <p>{this.props.currentUser.username}</p>
-          <TeamIndexContainer/>
+          <p>{this.props.currentUser.username}<i class="fa fa-caret-down"></i>
+          </p>
+          <div className="topbar-dropdown">
+            <ul className="dropdown-content">
+              <TeamIndexContainer/>
+              <h4>More</h4>
+              <li>Create New Team</li>
+            </ul>
+          </div>
         </div>
         <button onClick={this.props.logout}>Logout</button>
       </div>

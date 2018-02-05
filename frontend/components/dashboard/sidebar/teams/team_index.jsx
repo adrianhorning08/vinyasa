@@ -13,8 +13,7 @@ export class TeamIndex extends React.Component {
 
   render() {
     return (
-      <div className="topbar-dropdown">
-        <ul className="dropdown-content">
+        <div>
           <h4>Teams</h4>
           {this.props.teams.map(team => {
             return <li key={team.id}>
@@ -23,7 +22,6 @@ export class TeamIndex extends React.Component {
               </Link>
             </li>;
           })}
-        </ul>
       </div>
     );
   }

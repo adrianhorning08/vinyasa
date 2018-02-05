@@ -4,6 +4,7 @@ class Api::TeamsController < ApplicationController
   def create
     @team = Team.new(team_params)
     if @team.save
+      TeamMembership.create(user_id: current_user.id, team_id: @team.id)
       render "api/teams/show"
     else
       render json: @team.errors.full_messages, status: 422
@@ -11,7 +12,7 @@ class Api::TeamsController < ApplicationController
   end
 
   def index
-    @teams = Team.all
+    @teams = current_user.teams
     # Why do you want to do this even?
     # For example, when do you render Json vs. rendering this way
     render "api/teams/index"
