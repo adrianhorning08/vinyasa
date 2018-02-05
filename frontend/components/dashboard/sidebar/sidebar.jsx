@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
+import ProjectIndexContainer from '../../project/project_index_container';
 
 const customStyles = {
   content : {
@@ -61,14 +62,7 @@ export class Sidebar extends React.Component {
   render() {
     return (
       <div className="sidebar-section">
-        <div className="sidebar-title">
-          <p>Teams</p>
-          <svg onClick={this.openModal} className="Icon PlusIcon" viewBox="0 0 32 32"
-            height="10" width="10">
-            <polygon points="28,14 18,14 18,4 14,4 14,14 4,14 4,18 14,18 14,28 18,28 18,18 28,18">
-            </polygon>
-          </svg>
-      </div>
+        <ProjectIndexContainer/>
         <Modal
            isOpen={this.state.modalIsOpen}
            onAfterOpen={this.afterOpenModal}

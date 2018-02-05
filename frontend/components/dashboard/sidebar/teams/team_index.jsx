@@ -13,8 +13,8 @@ export class TeamIndex extends React.Component {
 
   render() {
     return (
-        <div>
-          <h4>Teams</h4>
+        <div className="sidebar-section">
+          <h4>My Teams</h4>
           {this.props.teams.map(team => {
             return <li key={team.id}>
               <Link to={`/dashboard/teams/${team.id}`}>

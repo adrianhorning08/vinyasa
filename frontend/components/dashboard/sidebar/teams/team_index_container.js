@@ -6,7 +6,7 @@ import { TeamIndex } from './team_index';
 
 const mapStateToProps = state => {
   return {
-    teams: Object.values(state.teams),
+    teams: Object.values(state.teams)
   };
 };
 

@@ -12,6 +12,7 @@ export const Dashboard = (props) => {
       <div className="sidebar">
         <div className="sidebar-logo"></div>
         <SidebarContainer/>
+        <Route exact path="/dashboard/teams/:teamId" component={TeamShowContainer}/>
       </div>
 
       <div className="vinyasa_main">
@@ -19,7 +20,6 @@ export const Dashboard = (props) => {
         <div className="page-header">
         </div>
         <div className="vinyasa_main_body_container">
-          <Route exact path="/dashboard/teams/:teamId" component={TeamShowContainer}/>
         </div>
       </div>
     </div>

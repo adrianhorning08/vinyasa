@@ -2,4 +2,5 @@
   json.set! project.id do
     json.extract! project, :id, :title, :team_id
   end
-end 
+  json.set! :team, project.team_id
+end

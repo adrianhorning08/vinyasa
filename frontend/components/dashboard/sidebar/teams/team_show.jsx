@@ -20,12 +20,14 @@ export class TeamShow extends React.Component {
       let team = this.props.team;
       if (team.members) {
         return (
-          <div className="show-page-index">
+          <div>
             <div className="show-page-index-header">
               <h1>{team.name}</h1>
             </div>
-              <div className="show-page-index-list">
-                <h3>Members</h3>
+            <div className="sidebar-title">
+              <p>Team</p>
+            </div>
+            <div className="sidebar-list">
                 <ul>
                   {team.members.map(member => {
                     return <li key={member.id* Math.random()}>{member.username}</li>;
@@ -48,7 +50,7 @@ export class TeamShow extends React.Component {
     // if not this.props.team return null. Good place
     // for a loading page
     return (
-      <div>
+      <div className="sidebar-section">
         {this.printAttributes()}
       </div>
     );

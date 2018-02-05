@@ -69,7 +69,7 @@ export class TopbarRight extends React.Component {
             <ul className="dropdown-content">
               <TeamIndexContainer/>
               <h4>More</h4>
-              <li onClick={this.openModal}>Create New Team</li>
+              <li className="new-team" onClick={this.openModal}>Create New Team</li>
             </ul>
           </div>
         </div>

@@ -10,9 +10,14 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
-    # need to filter by the team id
-    @projects = Project.all
-    render "api/projects/index"
+    if params[:team_id]
+      @projects = Project.where(team_id: params[:team_id])
+      render "api/projects/index"
+    else
+      @projects = Project.all
+      render "api/projects/index"
+    end
+
   end
 
   def show

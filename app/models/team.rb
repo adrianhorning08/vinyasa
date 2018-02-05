@@ -14,4 +14,5 @@ class Team < ApplicationRecord
   has_many :members,
     through: :team_memberships,
     source: :user
+  has_many :projects
 end
