@@ -2,6 +2,7 @@ class Api::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
+      ProjectMembership.create(user_id: current_user.id, project_id: @project.id)
       render "api/projects/show"
     else
       render json: @project.errors.full_messages, status: 422
@@ -9,6 +10,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
+    # need to filter by the team id
     @projects = Project.all
     render "api/projects/index"
   end

@@ -1,8 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
 
-
-
 const customStyles = {
   content : {
     top                   : '25%',
@@ -14,17 +12,12 @@ const customStyles = {
   }
 };
 
-
 export class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      team: {
-        name: '',
-        modalIsOpen: false
-      },
-
-      // need to specify team and project
+      name: '',
+      modalIsOpen: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.openModal = this.openModal.bind(this);
