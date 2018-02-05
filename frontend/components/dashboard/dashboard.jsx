@@ -1,7 +1,7 @@
 import React from 'react';
-import TeamIndexContainer from './teams/team_index_container';
+import SidebarContainer from './sidebar/sidebar_container';
+import TeamShowContainer from './sidebar/teams/team_show_container';
 import GreetingContainer from './greeting/greeting_container';
-import TeamShowContainer from './teams/team_show_container';
 import {Route, Redirect} from 'react-router-dom';
 import HeaderTextContainer from './header_text/header_text_container';
 
@@ -11,7 +11,7 @@ export const Dashboard = (props) => {
     <div className="vinyasa_ui">
       <div className="sidebar">
         <div className="sidebar-logo"></div>
-        <TeamIndexContainer/>
+        <SidebarContainer/>
       </div>
 
       <div className="vinyasa_main">

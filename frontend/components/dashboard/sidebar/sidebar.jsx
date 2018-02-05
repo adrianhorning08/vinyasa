@@ -1,7 +1,8 @@
 import React from 'react';
-import { TeamIndexItem } from './team_index_item';
-import { Link, Redirect } from 'react-router-dom';
 import Modal from 'react-modal';
+import TeamIndexContainer from './teams/team_index_container';
+
+
 
 const customStyles = {
   content : {
@@ -15,20 +16,20 @@ const customStyles = {
 };
 
 
-export class TeamIndex extends React.Component {
+export class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      modalIsOpen: false
+      team: {
+        name: '',
+        modalIsOpen: false
+      },
+
+      // need to specify team and project
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
-  }
-
-  componentDidMount() {
-    this.props.fetchTeams();
   }
 
   updateField(field) {
@@ -67,7 +68,6 @@ export class TeamIndex extends React.Component {
 
   render() {
     return (
-
       <div className="sidebar-section">
         <div className="sidebar-title">
           <p>Teams</p>
@@ -77,17 +77,7 @@ export class TeamIndex extends React.Component {
             </polygon>
           </svg>
       </div>
-      <div className="sidebar-list">
-        <ul>
-          {this.props.teams.map(team => {
-            return <li key={team.id}>
-              <Link to={`/dashboard/teams/${team.id}`}>
-                {team.name}
-              </Link>
-            </li>;
-          })}
-        </ul>
-      </div>
+      <TeamIndexContainer/>
         <Modal
            isOpen={this.state.modalIsOpen}
            onAfterOpen={this.afterOpenModal}
@@ -121,7 +111,7 @@ export class TeamIndex extends React.Component {
            <button>Create New Team</button>
          </form>
          </Modal>
-    </div>
+      </div>
     );
   }
 }

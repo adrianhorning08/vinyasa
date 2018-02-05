@@ -1,20 +1,17 @@
-import { fetchTeams, receiveTeam,
-  createTeam, clearTeamErrors } from '../../../actions/team_actions';
+import React from 'react';
 import { connect } from 'react-redux';
-import { TeamIndex } from './team_index';
+import { Sidebar } from './sidebar';
+import { createTeam, clearTeamErrors } from '../../../actions/team_actions';
 
 const mapStateToProps = state => {
   let errors = state.errors.teams;
   return {
-    teams: Object.values(state.teams),
     errors
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTeams: () => dispatch(fetchTeams()),
-    receiveTeam: team => dispatch(receiveTeam(team)),
     createTeam: team => dispatch(createTeam(team)),
     clearTeamErrors: () => dispatch(clearTeamErrors([]))
   };
@@ -23,4 +20,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TeamIndex);
+)(Sidebar);

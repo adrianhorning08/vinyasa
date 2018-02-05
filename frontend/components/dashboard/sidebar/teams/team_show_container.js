@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { TeamShow } from './team_show';
-import { fetchTeam } from '../../../actions/team_actions';
+import { fetchTeam } from '../../../../actions/team_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
