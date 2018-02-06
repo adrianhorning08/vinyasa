@@ -1,7 +1,6 @@
 import React from 'react';
 import Sidebar from './sidebar/sidebar';
 import {Route, Redirect} from 'react-router-dom';
-import HeaderTextContainer from './header_text/header_text_container';
 import TopbarContainer from './topbar/topbar_container';
 
 const Dashboard = () => {
