@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(logout()),
     createTeam: team => dispatch(createTeam(team)),
-    clearTeamErrors: () => dispatch(clearTeamErrors([]))
+    clearTeamErrors: () => dispatch(clearTeamErrors())
   };
 };
 
