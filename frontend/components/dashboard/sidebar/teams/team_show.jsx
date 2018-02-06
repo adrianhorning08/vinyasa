@@ -34,6 +34,7 @@ export class TeamShow extends React.Component {
                   })}
                 </ul>
             </div>
+            // put the projects here?
           </div>
         );
       }

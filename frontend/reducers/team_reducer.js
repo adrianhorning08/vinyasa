@@ -9,8 +9,8 @@ export const teamsReducer = (state = {}, action) => {
     case RECEIVE_ALL_TEAMS:
       return action.teams;
     case RECEIVE_TEAM:
-      newState[action.team.id] = action.team;
-      return merge({}, state, newState);
+      newState[action.payload.team.id] = action.payload.team;
+      return newState;
     case REMOVE_TEAM:
       newState = state;
       delete newState[action.team.id];

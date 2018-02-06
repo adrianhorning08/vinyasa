@@ -7,14 +7,10 @@ export class ProjectIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-    if (this.props.match.params.teamId !== nextProps.match.params.teamId) {
-      this.props.fetchProjects(nextProps.team.id);
-    }
+
   }
 
   componentDidMount() {
-    this.props.fetchProjects(this.props.match.params.teamId);
   }
 
   render() {

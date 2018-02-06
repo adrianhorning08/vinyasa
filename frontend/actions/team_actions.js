@@ -21,10 +21,10 @@ export const fetchTeam = (id) => dispatch => {
   return APIutil.fetchTeam(id).then(serverTeam => dispatch(receiveTeam(serverTeam)));
 };
 
-const receiveTeam = team => {
+const receiveTeam = payload => {
   return {
     type: RECEIVE_TEAM,
-    team
+    payload
   };
 };
 
