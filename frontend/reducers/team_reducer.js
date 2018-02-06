@@ -2,15 +2,21 @@ import { RECEIVE_TEAM, RECEIVE_ALL_TEAMS,
   REMOVE_TEAM, RECEIVE_TEAM_MEMBERS} from '../actions/team_actions';
 import merge from 'lodash/merge';
 
-export const teamsReducer = (state = {}, action) => {
+const _nullTeam = {
+  currentTeam: null,
+  teams: null
+};
+
+export const teamsReducer = (state = _nullTeam, action) => {
   let newState = {};
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_TEAMS:
-      return action.teams;
+      newState.teams = action.teams;
+      return merge({}, state, newState);
     case RECEIVE_TEAM:
-      newState[action.payload.team.id] = action.payload.team;
-      return newState;
+      newState.currentTeam = action.payload.team;
+      return merge({}, state, newState);
     case REMOVE_TEAM:
       newState = state;
       delete newState[action.team.id];

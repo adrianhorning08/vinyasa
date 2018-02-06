@@ -12,17 +12,26 @@ export class TeamIndex extends React.Component {
 
 
   render() {
-    return (
+    let teamList;
+    if (this.props.teams) {
+      teamList = Object.values(this.props.teams);
+      return (
         <div className="sidebar-section">
           <h4>My Teams</h4>
-          {this.props.teams.map(team => {
+          {teamList.map(team => {
             return <li key={team.id}>
               <Link to={`/dashboard/teams/${team.id}`}>
                 {team.name}
               </Link>
             </li>;
           })}
-      </div>
-    );
+        </div>
+      );
+    } else {
+      return (
+        <div>
+        </div>
+      );
+    }
   }
 }

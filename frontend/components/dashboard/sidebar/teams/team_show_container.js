@@ -6,7 +6,9 @@ import { withRouter } from 'react-router';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    team: state.teams[ownProps.match.params.teamId]
+    currentTeam: state.teams.currentTeam,
+    members: Object.values(state.members),
+    projects: Object.values(state.projects)
   };
 };
 
@@ -20,6 +22,3 @@ export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
 )(TeamShow));
-
-// wrapped with withRouter
-// force the route to re-render
