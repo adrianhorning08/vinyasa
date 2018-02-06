@@ -25,6 +25,7 @@ class User < ApplicationRecord
   has_many :projects,
     through: :project_memberships,
     source: :project
+  has_many :tasks
 
   def password=(password)
     @password = password

@@ -133,6 +133,7 @@
    flex-direction: row;
    justify-content: space-between;
    margin-top: 20px;
+   background: red;
  }
 
 .sidebar-list {

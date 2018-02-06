@@ -13,11 +13,7 @@ export class Dashboard extends React.Component {
   render() {
     return (
       <div className="vinyasa_ui">
-        <div className="sidebar">
-          <div className="sidebar-logo"></div>
-          <SidebarContainer/>
-          <Route path="/dashboard/teams/:teamId" component={TeamShowContainer}/>
-        </div>
+        <SidebarContainer/>
 
         <div className="vinyasa_main">
         <TopbarContainer/>

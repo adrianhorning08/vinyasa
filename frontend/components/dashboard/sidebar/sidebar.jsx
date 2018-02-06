@@ -62,8 +62,17 @@ export class Sidebar extends React.Component {
 
   render() {
     return (
-      <div className="sidebar-section">
-        
+      <div className="sidebar">
+        <div className="sidebar-logo"></div>
+
+        <svg onClick={this.closeModal}
+          className="XIcon CloseButton-xIcon"
+          viewBox="0 0 32 32"
+          >
+          <polygon points="24.485,27.314 27.314,24.485 18.828,16 27.314,7.515 24.485,4.686 16,13.172 7.515,4.686 4.686,7.515 13.172,16 4.686,24.485 7.515,27.314 16,18.828">
+          </polygon>
+        </svg>
+        <TeamShowContainer/>
         <Modal
            isOpen={this.state.modalIsOpen}
            onAfterOpen={this.afterOpenModal}
@@ -75,13 +84,6 @@ export class Sidebar extends React.Component {
          <form onSubmit={this.handleSubmit} className="modal-form">
            <header className="modal-form-header">
              New Team
-             <svg onClick={this.closeModal}
-               className="XIcon CloseButton-xIcon"
-               viewBox="0 0 32 32"
-               >
-               <polygon points="24.485,27.314 27.314,24.485 18.828,16 27.314,7.515 24.485,4.686 16,13.172 7.515,4.686 4.686,7.515 13.172,16 4.686,24.485 7.515,27.314 16,18.828">
-               </polygon>
-             </svg>
            </header>
            {this.renderErrors()}
            <label>Name

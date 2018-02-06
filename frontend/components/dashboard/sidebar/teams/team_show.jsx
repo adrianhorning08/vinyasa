@@ -6,7 +6,6 @@ export class TeamShow extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps.match.params.teamId);
     if (nextProps.match.params.teamId !== this.props.match.params.teamId) {
       this.props.fetchTeam(nextProps.match.params.teamId);
     }
@@ -65,9 +64,7 @@ export class TeamShow extends React.Component {
     // if not this.props.team return null. Good place
     // for a loading page
     return (
-      <div>
-        {this.printAttributes()}
-      </div>
+        this.printAttributes()
     );
   }
 }
