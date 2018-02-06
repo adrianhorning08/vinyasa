@@ -1,10 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { HeaderText } from './header_text';
+import {Teammates} from './teammates';
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = state => {
   return {
-    ownProps
+    members: Object.values(state.members),
+    team: state.teams
   };
 };
 
@@ -17,4 +18,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(HeaderText);
+)(Teammates);
