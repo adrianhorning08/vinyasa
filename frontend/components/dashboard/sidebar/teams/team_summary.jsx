@@ -37,9 +37,9 @@ export class TeamSummary extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     let currentTeamId = Number(this.props.location.pathname.match(/\d+/));
-    let pathname = this.props.location.pathname.split('/')[2];
+    let nextPath = nextProps.location.pathname.split('/')[2];
     let nextTeamId = Number(nextProps.location.pathname.match(/\d+/));
-    if (currentTeamId !== nextTeamId && pathname === 'teams') {
+    if (currentTeamId !== nextTeamId && nextPath === 'teams') {
       this.props.fetchTeam(nextTeamId);
     }
   }
