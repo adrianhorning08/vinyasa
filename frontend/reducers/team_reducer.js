@@ -12,8 +12,9 @@ export const teamsReducer = (state = _nullTeam, action) => {
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_ALL_TEAMS:
+      newState = merge({}, state);
       newState.teams = action.teams;
-      return merge({}, state, newState);
+      return newState;
     case RECEIVE_TEAM:
       newState.currentTeam = action.payload.team;
       return merge({}, state, newState);
