@@ -4,11 +4,13 @@ import errorsReducer from './errors_reducer';
 import { teamsReducer } from './team_reducer';
 import { projectReducer } from './project_reducer';
 import { membersReducer } from './members_reducer';
+import { tasksReducer } from './tasks_reducer';
 
 export const rootReducer = combineReducers({
   session: sessionReducer,
   errors: errorsReducer,
   teams: teamsReducer,
   projects: projectReducer,
-  members: membersReducer
+  members: membersReducer,
+  tasks: tasksReducer
 });

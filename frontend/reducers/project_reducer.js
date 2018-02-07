@@ -21,12 +21,14 @@ export const projectReducer = (state = _nullProject, action) => {
       // right after I fetch the team, to get all the projects.
       // But if I merge the projects state will now always have
       // that new project. So each page you go to have will have the new
-      // project I created. 
+      // project I created.
+      newState = merge({}, state);
       newState.projects = action.payload.projects;
       return newState;
     case RECEIVE_PROJECT:
-      newState.currentProject = action.project;
-      return merge({}, state, newState);
+      newState = merge({}, state);
+      newState.currentProject = action.payload.project;
+      return newState;
     case REMOVE_PROJECT:
       newState = state;
       delete newState[action.project.id];

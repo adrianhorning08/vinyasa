@@ -333,13 +333,6 @@ Task.create(
 )
 
 Task.create(
-  title: 'Blow up the walkers',
-  description: '',
-  user_id: wedge.id,
-  project_id: hoth.id
-)
-
-Task.create(
   title: 'Kill all my commanders',
   description: '',
   user_id: vader.id,

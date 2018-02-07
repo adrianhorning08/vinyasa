@@ -37,15 +37,19 @@ export class TeamSummary extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     let currentTeamId = Number(this.props.location.pathname.match(/\d+/));
+    let pathname = this.props.location.pathname.split('/')[2];
     let nextTeamId = Number(nextProps.location.pathname.match(/\d+/));
-    if (currentTeamId !== nextTeamId) {
+    if (currentTeamId !== nextTeamId && pathname === 'teams') {
       this.props.fetchTeam(nextTeamId);
     }
   }
 
   componentDidMount() {
     let teamId = Number(this.props.location.pathname.match(/\d+/));
-    this.props.fetchTeam(teamId);
+    let pathname = this.props.location.pathname.split('/')[2];
+    if (pathname === 'teams') {
+      this.props.fetchTeam(teamId);
+    }
   }
 
   render() {

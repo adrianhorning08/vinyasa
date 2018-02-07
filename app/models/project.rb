@@ -13,7 +13,7 @@ class Project < ApplicationRecord
   validates :title, presence: true
 
   has_many :project_memberships
-  has_many :users,
+  has_many :members,
     through: :project_memberships,
     source: :user
   belongs_to :team

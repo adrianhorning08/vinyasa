@@ -22,10 +22,10 @@ export const fetchProject = (id) => dispatch => {
     dispatch(receiveProject(serverProject)));
 };
 
-const receiveProject = project => {
+const receiveProject = payload => {
   return {
     type: RECEIVE_PROJECT,
-    project
+    payload
   };
 };
 

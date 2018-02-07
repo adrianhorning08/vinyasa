@@ -4,7 +4,6 @@ import { Link, Redirect } from 'react-router-dom';
 export class ProjectIndex extends React.Component {
   constructor(props) {
     super(props);
-
   }
 
 
@@ -15,7 +14,11 @@ export class ProjectIndex extends React.Component {
           <div className="sidebar-list">
               <ul>
                 {Object.values(this.props.projects).map(project => {
-                  return <li key={project.id* Math.random()}>{project.title}</li>;
+                  return <li key={project.id* Math.random()}>
+                    <Link to={`/dashboard/projects/${project.id}`}>
+                      {project.title}
+                    </Link>
+                  </li>;
                 })}
               </ul>
           </div>
