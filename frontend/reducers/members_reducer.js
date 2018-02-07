@@ -8,7 +8,7 @@ export const membersReducer = (state = {}, action) => {
     case RECEIVE_TEAM:
       return action.payload.members;
     case RECEIVE_PROJECT:
-
+      return action.payload.members;
     default:
       return state;
   }

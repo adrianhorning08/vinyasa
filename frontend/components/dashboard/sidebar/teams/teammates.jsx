@@ -10,10 +10,9 @@ export class Teammates extends React.Component {
       return (
         <div className="sidebar-section">
           <div className="show-page-index-header">
-            <h1>{this.props.team.currentTeam.name}</h1>
           </div>
           <div className="sidebar-title">
-            <p>Team</p>
+            <p>Teammates</p>
           </div>
           <div className="sidebar-list">
             <ul>

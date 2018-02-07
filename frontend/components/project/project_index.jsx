@@ -6,6 +6,7 @@ export class ProjectIndex extends React.Component {
     super(props);
   }
 
+  // just fetch the projects here
 
   render() {
     if (this.props.projects !== null) {
