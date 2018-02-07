@@ -3,6 +3,7 @@ import Sidebar from './sidebar/sidebar';
 import {Route, Redirect} from 'react-router-dom';
 import TopbarContainer from './topbar/topbar_container';
 import TaskIndexContainer from '../tasks/task_index_container';
+import HeaderContainer from './header_container';
 
 const Dashboard = () => {
     return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
         <div className="vinyasa_main">
           <TopbarContainer/>
           <div className="page-header">
+            <HeaderContainer/>
           </div>
           <div className="vinyasa_main_body_container">
             <TaskIndexContainer/>

@@ -1,19 +1,20 @@
-// import React from 'react';
-// import { connect } from 'react-redux';
-//
-// const mapStateToProps = state => {
-//   return {
-//   };
-// };
-//
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     fetchTeam: id => dispatch(fetchTeam(id)),
-//     clearProjectErrors: () => dispatch(clearProjectErrors([]))
-//   };
-// };
-//
-// export default withRouter(connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(TeamSummary));
+import React from 'react';
+import { connect } from 'react-redux';
+import { Header } from './header';
+import { withRouter } from 'react-router';
+
+const mapStateToProps = state => {
+  return {
+    team: state.teams
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+  };
+};
+
+export default withRouter(connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header));
