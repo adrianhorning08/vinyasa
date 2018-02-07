@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export class Teammates extends React.Component {
   constructor(props) {
@@ -17,7 +18,9 @@ export class Teammates extends React.Component {
           <div className="sidebar-list">
             <ul>
               {this.props.members.map(member => {
-                return <li key={member.id* Math.random()}>{member.username}</li>;
+                return <li key={member.id* Math.random()}>
+                  <Link to={`/dashboard/users/${member.id}`}>{member.username}</Link>
+                </li>;
                 })}
               </ul>
             </div>

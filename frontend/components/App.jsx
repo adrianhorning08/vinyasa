@@ -3,6 +3,7 @@ import SessionFormContainer from './session_form/session_form_container';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import Dashboard from './dashboard/dashboard';
+import TaskIndexContainer from './tasks/task_index_container';
 
 const App = () => (
 
