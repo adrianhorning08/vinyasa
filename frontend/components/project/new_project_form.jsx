@@ -30,8 +30,8 @@ export class NewProjectForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createProject(this.state)
-    .then(() => this.props.closeModal())
-    .then(() => this.props.history.push(`/dashboard/teams/${this.state.team_id}`));
+    .then(() => this.props.fetchTeam(this.props.currentTeam.id))
+    .then(() => this.props.closeModal());
   }
 
 

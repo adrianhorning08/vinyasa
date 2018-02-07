@@ -5,7 +5,7 @@ import { fetchProjects } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    projects: Object.values(state.projects)
+    projects: state.projects.projects
   };
 };
 

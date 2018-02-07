@@ -8,12 +8,6 @@ Rails.application.routes.draw do
     resources :teams, except: [:new, :edit] do
       resources :projects, except: [:new, :edit]
     end
-    resources :projects, except: [:new, :edit] do
-      resources :tasks, except: [:new, :edit]
-    end
-    resources :users, except: [:new, :edit] do
-      resources :tasks, except: [:new, :edit]
-    end
     resources :projects, except: [:new, :edit]
     resources :tasks, except: [:new, :edit]
   end

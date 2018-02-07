@@ -10,14 +10,7 @@ class Api::ProjectsController < ApplicationController
   end
 
   def index
-    if params[:team_id]
-      @projects = Project.where(team_id: params[:team_id])
-      render "api/projects/index"
-    else
-      @projects = Project.all
-      render "api/projects/index"
-    end
-
+    @projects = Project.all
   end
 
   def show

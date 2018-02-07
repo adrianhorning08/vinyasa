@@ -1,2 +1,1 @@
-json.extract! project, :title, :team_id
-json.set! :users, project.users
+json.extract! project, :id, :title, :team_id
