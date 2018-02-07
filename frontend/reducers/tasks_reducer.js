@@ -8,8 +8,6 @@ export const tasksReducer = (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_PROJECT:
       return action.payload.tasks;
-    case RECEIVE_USER:
-      return action.payload.tasks;
     default:
       return state;
   }
