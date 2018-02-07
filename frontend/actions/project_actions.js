@@ -36,6 +36,7 @@ export const createProject = project => dispatch => {
 };
 
 const receiveProjectErrors = errors => {
+  console.log(errors);
   return {
     type: RECEIVE_PROJECT_ERRORS,
     errors

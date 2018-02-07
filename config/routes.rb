@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :edit] do
       resources :tasks, except: [:new, :edit]
     end
+    resources :projects, except: [:new, :edit]
+    resources :tasks, except: [:new, :edit]
   end
 end

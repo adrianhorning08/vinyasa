@@ -28,7 +28,7 @@ export class TeamSummary extends React.Component {
 
   closeModal() {
     this.setState({modalIsOpen: false});
-
+    this.props.clearProjectErrors();
   }
 
   openModal() {

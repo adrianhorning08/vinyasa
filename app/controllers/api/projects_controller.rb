@@ -1,7 +1,6 @@
 class Api::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
-    # how do I pass the team_id in after they submit the form?
     if @project.save
       ProjectMembership.create(user_id: current_user.id, project_id: @project.id)
       render "api/projects/show"

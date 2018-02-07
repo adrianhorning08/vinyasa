@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchTeam } from '../../../../actions/team_actions';
 import { withRouter } from 'react-router';
 import { TeamSummary } from './team_summary';
+import { clearProjectErrors } from '../../../../actions/project_actions';
 
 
 const mapStateToProps = state => {
@@ -13,6 +14,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchTeam: id => dispatch(fetchTeam(id)),
+    clearProjectErrors: () => dispatch(clearProjectErrors([]))
   };
 };
 
