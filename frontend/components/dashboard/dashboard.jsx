@@ -17,6 +17,8 @@ const Dashboard = () => {
           </div>
           <div className="vinyasa_main_body_container">
             <Route path="/dashboard/tasks/:taskId" component={TaskShowContainer}/>
+            <div className="right-pane">
+            </div>
             <Route path="/dashboard" component={TaskIndexContainer}/>
           </div>
         </div>

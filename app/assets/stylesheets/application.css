@@ -381,7 +381,7 @@
    flex-direction: column;
    min-width: 405px;
    background: white;
-   margin: 20px 90px 0 90px;
+   margin: 15px 0 0 90px;
    transition: margin-left 0.25s ease-out, width 0.25s ease-out;
    max-width: 1000px;
    flex: 5500 1 605px;
@@ -402,6 +402,10 @@
    min-height: 600px;
  }
 
+ .right-pane {
+   margin-left: 15px;
+ }
+
  .single-task-pane {
    width: 495px;
    background: white;
@@ -411,7 +415,7 @@
    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
    overflow: hidden;
    border-radius: 3px 3px 0 0;
-   margin: 20px 10px 0 0;
+   margin: 15px 20px 0 0;
  }
 
  .single-task-pane-toolbar {

@@ -36,6 +36,7 @@ export class TaskShow extends React.Component {
             {this.props.currentTask.title}
           </div>
           <div className="single-task-pane-description">
+            {this.props.currentTask.description}
           </div>
         </div>
       );
