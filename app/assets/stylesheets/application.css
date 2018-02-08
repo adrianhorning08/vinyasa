@@ -403,10 +403,27 @@
 
  .task-item {
    height: 36px;
+   margin-bottom: -1px;
+   padding-bottom: 1px;
+   position: relative;
  }
 
  .task-content {
-   
+   border-bottom: 1px solid #e0e6e8;
+   height: 34px;
+   display: flex;
+   align-items: center;
+   margin: 0 30px;
+   position: relative;
+   white-space: nowrap;
+ }
+
+ .task-content:hover {
+   padding: 0 30px;
+   margin: 0;
+   cursor: text;
+   border-color: #e0e6e8;
+   border-top: 1px solid #e0e6e8;
  }
 
  .fa-check-circle {

@@ -19,12 +19,12 @@ class Api::TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find_by(id: params[:task_id])
+    @task = Task.find_by(id: params[:id])
     render "api/tasks/show"
   end
 
   def destroy
-    @task = Task.find_by(id: params[:task_id])
+    @task = Task.find_by(id: params[:id])
     @task.destroy
     render "api/tasks/show"
   end
