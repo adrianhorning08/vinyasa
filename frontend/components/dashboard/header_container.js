@@ -6,7 +6,9 @@ import { withRouter } from 'react-router';
 const mapStateToProps = state => {
   return {
     team: state.teams,
-    user: state.user
+    user: state.user,
+    currentUser: state.session.currentUser,
+    currentProject: state.projects.currentProject
   };
 };
 

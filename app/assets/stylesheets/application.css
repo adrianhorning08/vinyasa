@@ -110,7 +110,17 @@
  .page-header-title {
    display: flex;
    justify-content: center;
-   padding: 13px;
+   flex-direction: column;
+ }
+
+ .page-header-title h1 {
+   margin: 0;
+   font-size: 10px;
+ }
+
+ .page-header-title h4 {
+   font-size: 8px;
+   margin: 0;
  }
 
  .sidebar {
