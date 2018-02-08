@@ -105,6 +105,8 @@
  .page-header {
    display: block;
    height: 65px;
+   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+   z-index: 1;
  }
 
  .page-header-title {
@@ -374,11 +376,55 @@
  }
 
  .center-pane {
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   min-width: 405px;
+   background: white;
+   margin: 20px 90px 0 90px;
+   transition: margin-left 0.25s ease-out, width 0.25s ease-out;
+   max-width: 1000px;
+   flex: 5500 1 605px;
+   border-radius: 3px 3px 0 0;
+   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+ }
 
+ .right-pane-container {
+   margin-left: -675px;
+   display: flex;
+   flex-direction: column;
+   flex: 4500 0 495px;
+   justify-content: flex-start;
+   transition: margin-left 0.2s;
+   max-width: 675px;
+   position: relative;
+   z-index: 0;
  }
 
  .task-item {
+   height: 36px;
+ }
+
+ .task-content {
    
+ }
+
+ .fa-check-circle {
+   width: 18px;
+   height: 18px;
+   margin: 0 10px 0 0;
+   transition: 200ms box-shadow,200ms color,200ms background,200ms fill;
+   color: #848f99;
+   fill: #848f99;
+   border-radius: 50%;
+   font-size: 20px;
+ }
+
+ .fa-check-circle:hover {
+   cursor: pointer;
+   background-color: #e2fffa;
+   border-color: #25e8c8;
+   fill: #25e8c8;
  }
 
 /* auth stuff */

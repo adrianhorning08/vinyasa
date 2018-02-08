@@ -8,7 +8,12 @@ export class TaskIndexItem extends React.Component {
   render() {
     return (
       <div className="task-item">
-        {this.props.task.title}
+        <div className="task-content">
+          <i class="far fa-check-circle"></i>
+          <div className="task-title">
+            {this.props.task.title}
+          </div>
+        </div>
       </div>
     );
   }
