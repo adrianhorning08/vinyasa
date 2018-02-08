@@ -50,6 +50,7 @@ export class TeamSummary extends React.Component {
     if (pathname === 'teams') {
       this.props.fetchTeam(teamId);
     }
+
   }
 
   render() {

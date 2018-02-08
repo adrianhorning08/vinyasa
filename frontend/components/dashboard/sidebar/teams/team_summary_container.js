@@ -8,6 +8,7 @@ import { clearProjectErrors } from '../../../../actions/project_actions';
 
 const mapStateToProps = state => {
   return {
+    teams: state.teams.teams
   };
 };
 

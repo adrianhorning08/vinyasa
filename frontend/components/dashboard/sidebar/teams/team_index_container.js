@@ -1,6 +1,4 @@
-import { fetchTeams,
-  createTeam,
-  clearTeamErrors } from '../../../../actions/team_actions';
+import { fetchTeams, fetchTeam, createTeam, clearTeamErrors } from '../../../../actions/team_actions';
 import { connect } from 'react-redux';
 import { TeamIndex } from './team_index';
 
@@ -12,7 +10,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTeams: () => dispatch(fetchTeams())
+    fetchTeams: () => dispatch(fetchTeams()),
+    fetchTeam: id => dispatch(fetchTeam(id))
   };
 };
 

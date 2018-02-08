@@ -7,7 +7,8 @@ export class TeamIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchTeams();
+    this.props.fetchTeams()
+      .then((res) => this.props.fetchTeam(Object.values(res.teams)[0].id));
   }
 
 
