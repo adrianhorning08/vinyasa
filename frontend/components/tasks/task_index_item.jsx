@@ -9,7 +9,7 @@ export class TaskIndexItem extends React.Component {
     return (
       <div className="task-item">
         <div className="task-content">
-          <i class="far fa-check-circle"></i>
+          <i className="far fa-check-circle"></i>
           <div className="task-title">
             {this.props.task.title}
           </div>

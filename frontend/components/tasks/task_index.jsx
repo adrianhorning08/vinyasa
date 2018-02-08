@@ -31,10 +31,10 @@ export class TaskIndex extends React.Component {
   }
 
   render() {
-    if (this.props.tasks.length > 0) {
+    if (this.props.tasks.tasks !== null) {
       return (
         <div className="center-pane">
-              {Object.values(this.props.tasks).map(task => {
+              {Object.values(this.props.tasks.tasks).map(task => {
                 return <TaskIndexItem key={task.id* Math.random()} task={task}/>;
               })}
         </div>
