@@ -6,19 +6,26 @@ export class TaskIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    let currentProjectId = Number(this.props.location.pathname.match(/\d+/));
-    let nextProjectId = Number(nextProps.location.pathname.match(/\d+/));
+    let id = Number(this.props.location.pathname.match(/\d+/));
+    let nextId = Number(nextProps.location.pathname.match(/\d+/));
     let nextPath = nextProps.location.pathname.split('/')[2];
-    if (currentProjectId !== nextProjectId && nextPath === 'projects') {
-      this.props.fetchProject(nextProjectId);
+
+    if (id !== nextId && nextPath === 'projects') {
+      this.props.fetchProject(nextId);
+    }
+
+    if (id !== nextId && nextPath === 'users') {
+      this.props.fetchUser(nextId);
     }
   }
 
   componentDidMount() {
-    let projectId = Number(this.props.location.pathname.match(/\d+/));
+    let id = Number(this.props.location.pathname.match(/\d+/));
     let pathname = this.props.location.pathname.split('/')[2];
     if (pathname === 'projects') {
-      this.props.fetchProject(projectId);
+      this.props.fetchProject(id);
+    } else if (pathname === 'users') {
+      this.props.fetchUser(id);
     }
   }
 

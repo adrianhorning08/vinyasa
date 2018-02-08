@@ -14,7 +14,6 @@ export const sessionReducer = (state = oldState, action) => {
   if (state.currentUser !== null) {
     if (state.currentUser.user) {
       state.currentUser = state.currentUser.user;
-      console.log(state.currentUser.user);
     }
   }
   switch (action.type) {

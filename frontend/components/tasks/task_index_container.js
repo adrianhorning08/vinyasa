@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { TaskIndex } from './task_index';
 import { withRouter } from 'react-router';
 import { fetchProject } from '../../actions/project_actions';
+import { fetchUser } from '../../actions/user_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -13,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchProject: id => dispatch(fetchProject(id))
+    fetchProject: id => dispatch(fetchProject(id)),
+    fetchUser: id => dispatch(fetchUser(id))
   };
 };
 
