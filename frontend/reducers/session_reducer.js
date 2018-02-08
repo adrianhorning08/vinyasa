@@ -4,14 +4,18 @@ import merge from 'lodash/merge';
 let oldState = {
   currentUser: null,
 };
+
 export const sessionReducer = (state = oldState, action) => {
   let newState = {};
-  Object.freeze(state);
-  console.log(action.payload);
   if (action.payload === null) {
     newState.currentUser = null;
-    console.log(newState);
     return newState;
+  }
+  if (state.currentUser !== null) {
+    if (state.currentUser.user) {
+      state.currentUser = state.currentUser.user;
+      console.log(state.currentUser.user);
+    }
   }
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
