@@ -27,9 +27,16 @@ export class TaskShow extends React.Component {
       return (
         <div className="single-task-pane">
           <div className="single-task-pane-toolbar">
-            
+            This is the toolbar
           </div>
-          {this.props.currentTask.title}
+          <div className="single-task-pane-title">
+            <div className="single-task-pane-checkbox">
+              <i className="far fa-check-circle"></i>
+            </div>
+            {this.props.currentTask.title}
+          </div>
+          <div className="single-task-pane-description">
+          </div>
         </div>
       );
     } else {
