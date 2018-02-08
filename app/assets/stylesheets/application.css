@@ -399,6 +399,7 @@
    max-width: 675px;
    position: relative;
    z-index: 0;
+   background: white;
  }
 
  .task-item {
