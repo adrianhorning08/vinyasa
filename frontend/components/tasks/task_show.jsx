@@ -25,7 +25,10 @@ export class TaskShow extends React.Component {
   render() {
     if (this.props.currentTask !== null) {
       return (
-        <div className="right-pane-container">
+        <div className="single-task-pane">
+          <div className="single-task-pane-toolbar">
+            
+          </div>
           {this.props.currentTask.title}
         </div>
       );
