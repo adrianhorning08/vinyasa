@@ -1,5 +1,7 @@
 # this will be handled by the usersReducer
-json.extract! user, :id, :username
+json.user do
+  json.extract! user, :id, :username
+end
 
 # tasksReducer
 json.tasks do
