@@ -5,7 +5,8 @@ import { withRouter } from 'react-router';
 
 const mapStateToProps = state => {
   return {
-    team: state.teams
+    team: state.teams,
+    user: state.user
   };
 };
 

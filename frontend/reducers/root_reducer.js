@@ -5,6 +5,7 @@ import { teamsReducer } from './team_reducer';
 import { projectReducer } from './project_reducer';
 import { membersReducer } from './members_reducer';
 import { tasksReducer } from './tasks_reducer';
+import { usersReducer } from './users_reducer';
 
 export const rootReducer = combineReducers({
   session: sessionReducer,
@@ -12,5 +13,6 @@ export const rootReducer = combineReducers({
   teams: teamsReducer,
   projects: projectReducer,
   members: membersReducer,
-  tasks: tasksReducer
+  tasks: tasksReducer,
+  user: usersReducer
 });

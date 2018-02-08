@@ -277,7 +277,7 @@ Task.create(
 )
 
 Task.create(
-  title: 'Watch helplessly',
+  title: 'Watch the screen thingy',
   description: '',
   user_id: leia.id,
   project_id: blow_up_death_star.id

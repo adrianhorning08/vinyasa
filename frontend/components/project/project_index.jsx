@@ -6,13 +6,12 @@ export class ProjectIndex extends React.Component {
     super(props);
   }
 
-  // just fetch the projects here
 
   render() {
     if (this.props.projects !== null) {
       return (
         <div className="sidebar-section">
-          <div className="sidebar-list">
+          <div className="sidebar-list project-list">
               <ul>
                 {Object.values(this.props.projects).map(project => {
                   return <li key={project.id* Math.random()}>
