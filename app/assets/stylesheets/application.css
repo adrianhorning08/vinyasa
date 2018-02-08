@@ -244,19 +244,28 @@
    min-width: 920px;
    height: 41px;
    flex-shrink: 0;
-   position: relative;
-   display: block;
+   display: flex;
+   justify-content: space-between;
+   padding: 0 100px 0 100px;
    z-index: 2;
+   color: #848f99;
+ }
+
+ .topbar-left {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .topbar-left:hover {
+   color: #14aaf5
  }
 
  .topbar-right {
    display: flex;
    flex-direction: row;
+   padding: 5px 80px 7px 0;
    align-items: center;
-   padding-top: 5px;
-   padding-right: 80px;
-   justify-content: flex-end;
-   color: #848f99;
  }
 
  .topbar button {
