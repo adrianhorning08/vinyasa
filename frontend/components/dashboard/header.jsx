@@ -33,7 +33,6 @@ export class Header extends React.Component {
     return (
       <div className="page-header-title">
         {title}
-        <br/>
         <h4>{subheading}</h4>
       </div>
     );

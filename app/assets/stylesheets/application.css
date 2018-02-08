@@ -111,16 +111,18 @@
    display: flex;
    justify-content: center;
    flex-direction: column;
+   align-items: center;
  }
 
  .page-header-title h1 {
-   margin: 0;
-   font-size: 10px;
+   font-size: 32px;
+   padding: 2px 0 2px 0;
  }
 
  .page-header-title h4 {
-   font-size: 8px;
+   font-size: 16px;
    margin: 0;
+   font-weight: 300;
  }
 
  .sidebar {
@@ -369,6 +371,14 @@
 
  .show-page-index-list li{
    padding: 7px;
+ }
+
+ .center-pane {
+
+ }
+
+ .task-item {
+   
  }
 
 /* auth stuff */

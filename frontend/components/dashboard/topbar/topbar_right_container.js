@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../../../actions/session_actions';
 import { TopbarRight } from './topbar_right';
-import { createTeam, clearTeamErrors, fetchTeams } from '../../../actions/team_actions';
+import { createTeam, clearTeamErrors, fetchTeams, fetchTeam } from '../../../actions/team_actions';
 
 const mapStateToProps = state => {
   let errors = state.errors.teams;
@@ -17,7 +17,8 @@ const mapDispatchToProps = dispatch => {
     logout: () => dispatch(logout()),
     createTeam: team => dispatch(createTeam(team)),
     clearTeamErrors: () => dispatch(clearTeamErrors()),
-    fetchTeams: () => dispatch(fetchTeams())
+    fetchTeams: () => dispatch(fetchTeams()),
+    fetchTeam: id => dispatch(fetchTeam(id))
   };
 };
 

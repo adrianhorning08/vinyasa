@@ -1,4 +1,5 @@
 import React from 'react';
+import { TaskIndexItem } from './task_index_item';
 
 export class TaskIndex extends React.Component {
   constructor(props) {
@@ -33,11 +34,9 @@ export class TaskIndex extends React.Component {
     if (this.props.tasks.length > 0) {
       return (
         <div className="center-pane">
-            <ul>
               {Object.values(this.props.tasks).map(task => {
-                return <li key={task.id* Math.random()}>Title:{task.title}Assignee:{task.user_id} </li>;
+                return <TaskIndexItem key={task.id* Math.random()} task={task}/>;
               })}
-            </ul>
         </div>
       );
     } else {

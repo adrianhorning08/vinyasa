@@ -53,6 +53,8 @@ export class TopbarRight extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createTeam(this.state)
+      .then((res) => this.props.fetchTeam(res.payload.team.id))
+      .then(res => console.log(res))
       .then(() => this.props.fetchTeams())
       .then(() => this.closeModal());
   }
