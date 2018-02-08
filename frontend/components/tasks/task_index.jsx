@@ -34,9 +34,12 @@ export class TaskIndex extends React.Component {
     if (this.props.tasks.tasks !== null) {
       return (
         <div className="center-pane">
-              {Object.values(this.props.tasks.tasks).map(task => {
-                return <TaskIndexItem key={task.id* Math.random()} task={task}/>;
-              })}
+          <div className="task-index-header">
+            <button>Add Task</button>
+          </div>
+            {Object.values(this.props.tasks.tasks).map(task => {
+              return <TaskIndexItem key={task.id* Math.random()} task={task}/>;
+            })}
         </div>
       );
     } else {

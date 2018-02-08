@@ -16,10 +16,12 @@ const Dashboard = () => {
             <HeaderContainer/>
           </div>
           <div className="vinyasa_main_body_container">
+            <div className="paneGutter"></div>
             <Route path="/dashboard/tasks/:taskId" component={TaskShowContainer}/>
             <div className="right-pane">
             </div>
             <Route path="/dashboard" component={TaskIndexContainer}/>
+            <div className="paneGutter"></div>
           </div>
         </div>
       </div>

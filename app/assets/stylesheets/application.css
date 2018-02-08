@@ -375,18 +375,39 @@
    padding: 7px;
  }
 
+ .task-index-header {
+   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+   display: flex;
+   height: 50px;
+   padding-left: 30px;
+   position: relative;
+   flex: 0 0 auto;
+   align-items: center;
+ }
+
+ .task-index-header button {
+   height: 30px;
+   line-height: 30px;
+ }
+
  .center-pane {
    flex: 1;
    display: flex;
    flex-direction: column;
    min-width: 405px;
    background: white;
-   margin: 15px 0 0 90px;
+   margin-top: 15px;
    transition: margin-left 0.25s ease-out, width 0.25s ease-out;
    max-width: 1000px;
    flex: 5500 1 605px;
    border-radius: 3px 3px 0 0;
    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+ }
+
+ .paneGutter {
+   flex-basis: 15px;
+   flex: 1 0 20px;
+   transition: flex-basis 200ms,-webkit-flex-basis 200ms;
  }
 
  .right-pane-container {
@@ -450,11 +471,6 @@
    line-height: 1;
    display: inline-block;
    fill: #b7bfc6;
- }
-
- .Icon {
-   height: 16px;
-   width: 16px;
  }
 
  .CheckIcon {
