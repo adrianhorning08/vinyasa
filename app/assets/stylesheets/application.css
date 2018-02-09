@@ -504,6 +504,10 @@
    white-space: nowrap;
  }
 
+ .checkbox {
+   
+ }
+
  .task-content:hover {
    padding: 0 30px;
    margin: 0;

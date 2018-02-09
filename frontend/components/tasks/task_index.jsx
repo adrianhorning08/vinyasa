@@ -36,16 +36,22 @@ export class TaskIndex extends React.Component {
     let id = Number(this.props.location.pathname.match(/\d+/));
     let pathname = this.props.location.pathname.split('/');
     let task = {title: '', user_id: this.props.currentUser.id};
+    let action;
 
     if (pathname[2] === 'users') {
       task.user_id = id;
-      this.props.createTask(task)
-        .then(() => this.props.fetchUser(id));
+      action = this.props.fetchUser;
     } else if (pathname[2] === 'projects') {
-      task.project_id = id;
-      this.props.createTask(task)
-        .then(() => this.props.fetchProject(id));
+        task.project_id = id;
+        action = this.props.fetchProject;
+    } else if (pathname[1] === 'dashboard') {
+        console.log(this.props.currentUser);
+        task.user_id = this.props.currentUser.id;
+        action = this.props.fetchUser;
+        id = this.props.currentUser.id;
     }
+    this.props.createTask(task)
+      .then(() => action(id));
   }
 
   render() {
@@ -64,6 +70,7 @@ export class TaskIndex extends React.Component {
                 fetchProject={this.props.fetchProject}
                 history={this.props.history}
                 match={this.props.match}
+                currentUser={this.props.currentUser}
                 />;
             })}
         </div>
