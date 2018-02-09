@@ -518,6 +518,10 @@
    position: relative;
  }
 
+ .task-title {
+   width: 100%;
+ }
+
  textarea {
    background: transparent;
    display: block;
@@ -527,7 +531,7 @@
    overflow: hidden;
    resize: none;
    top: 0;
-   width: 100%;
+   width: 300px;
  }
 
  .single-task-pane-title {

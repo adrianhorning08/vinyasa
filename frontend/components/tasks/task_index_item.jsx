@@ -55,15 +55,16 @@ export class TaskIndexItem extends React.Component {
               </polygon>
             </svg>
           </div>
+          <Link to={`/dashboard/${pathname}/${id}/tasks/${this.props.task.id}`}>
           <div className="task-title">
-            <Link to={`/dashboard/${pathname}/${id}/tasks/${this.props.task.id}`}>
               <textarea
+                placeholder="Write a task name"
                 value={this.props.task.title}
                 className="task-name-input"
                 >
               </textarea>
-            </Link>
           </div>
+        </Link>
         </div>
       </div>
     );

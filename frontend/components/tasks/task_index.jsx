@@ -45,7 +45,6 @@ export class TaskIndex extends React.Component {
         task.project_id = id;
         action = this.props.fetchProject;
     } else if (pathname[1] === 'dashboard') {
-        console.log(this.props.currentUser);
         task.user_id = this.props.currentUser.id;
         action = this.props.fetchUser;
         id = this.props.currentUser.id;
