@@ -20,6 +20,11 @@ export const createTask = task => dispatch => {
     .then(serverTask => dispatch(receieveTask(serverTask)));
 };
 
+export const updateTask = task => dispatch => {
+  return APIutil.updateTask(task)
+    .then(serverTask => dispatch(receieveTask(serverTask)));
+};
+
 export const deleteTask = task => dispatch => {
   return APIutil.deleteTask(task)
     .then(serverTask => dispatch(removeTask(serverTask)));

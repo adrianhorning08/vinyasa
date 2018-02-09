@@ -6,7 +6,7 @@ export class TaskIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: ''
+      title: this.props.task.title
     };
     this.completeTask = this.completeTask.bind(this);
     this.updateField = this.updateField.bind(this);
@@ -55,16 +55,17 @@ export class TaskIndexItem extends React.Component {
               </polygon>
             </svg>
           </div>
-          <Link to={`/dashboard/${pathname}/${id}/tasks/${this.props.task.id}`}>
           <div className="task-title">
+            <Link to={`/dashboard/${pathname}/${id}/tasks/${this.props.task.id}`}>
               <textarea
                 placeholder="Write a task name"
-                value={this.props.task.title}
+                value={this.state.title}
                 className="task-name-input"
+                onChange={this.updateField()}
                 >
               </textarea>
+            </Link>
           </div>
-        </Link>
         </div>
       </div>
     );

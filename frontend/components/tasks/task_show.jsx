@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom';
 export class TaskShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      title: '',
+      description: '',
+      id: this.props.location.pathname.split('/')[5]
+    };
+    this.updateField = this.updateField.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -11,16 +17,26 @@ export class TaskShow extends React.Component {
     let nextId = nextProps.location.pathname.split('/')[5];
     let nextPath = nextProps.location.pathname.split('/')[4];
     if (taskId !== nextId && nextPath === 'tasks') {
-      this.props.fetchTask(nextId);
+      this.props.fetchTask(nextId)
+        .then(res => this.setState({title:[res.task.title][0], description:[res.task.description][0]}));
     }
   }
 
   componentDidMount() {
     let taskId = this.props.location.pathname.split('/')[5];
-    this.props.fetchTask(taskId);
+    this.props.fetchTask(taskId)
+      .then(res => this.setState({title:[res.task.title][0], description:[res.task.description][0]}));
+  }
+
+  updateField(field) {
+     e => {
+      return this.setState({[field]: e.target.value});
+    };
+    this.props.updateTask(this.state);
   }
 
   render() {
+
     let path = this.props.location.pathname.split('/')[2];
     let id = this.props.location.pathname.split('/')[3];
     if (path === 'users') {
@@ -51,11 +67,20 @@ export class TaskShow extends React.Component {
                 </polygon>
               </svg>
             </div>
-              {task.title}
+              <textarea
+                placeholder="Write a task name"
+                value={this.state.title}
+                onChange={this.updateField('title')}
+                >
+              </textarea>
 
           </div>
-          <textarea className="single-task-pane-description">
-            {task.description}
+          <textarea
+            placeholder="Description"
+            value={this.state.description}
+            className="single-task-pane-description"
+            onChange={this.updateField('description')}
+            >
           </textarea>
         </div>
       );

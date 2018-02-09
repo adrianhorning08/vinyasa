@@ -18,6 +18,10 @@ class Api::TasksController < ApplicationController
     end
   end
 
+  def update
+    @task = Task.find_by(id: params[:id])
+  end
+
   def show
     @task = Task.find_by(id: params[:id])
     render "api/tasks/show"
