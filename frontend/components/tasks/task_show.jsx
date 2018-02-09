@@ -34,16 +34,15 @@ export class TaskShow extends React.Component {
       return (
         <div className="single-task-pane">
           <div className="single-task-pane-toolbar">
-            <div className="single-task-close">
-              <Link to={path}>Close</Link>
-              <svg
-                className="XIcon CloseButton-xIcon"
-                viewBox="0 0 32 32"
-                >
-                <polygon points="24.485,27.314 27.314,24.485 18.828,16 27.314,7.515 24.485,4.686 16,13.172 7.515,4.686 4.686,7.515 13.172,16 4.686,24.485 7.515,27.314 16,18.828">
-                </polygon>
-              </svg>
-            </div>
+            <Link to={path}>
+            <svg
+              className="xicon-single-task"
+              viewBox="0 0 32 32"
+              >
+              <polygon points="24.485,27.314 27.314,24.485 18.828,16 27.314,7.515 24.485,4.686 16,13.172 7.515,4.686 4.686,7.515 13.172,16 4.686,24.485 7.515,27.314 16,18.828">
+              </polygon>
+            </svg>
+            </Link>
           </div>
           <div className="single-task-pane-title">
             <div className="single-task-pane-checkbox">

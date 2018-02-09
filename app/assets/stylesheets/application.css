@@ -188,6 +188,19 @@
    fill: #b7bfc6;
  }
 
+ .xicon-single-task {
+   color: #9ca6af;
+   fill: #9ca6af;
+   height: 16px;
+   width: 16px;
+   margin-right: 10px;
+ }
+
+ .xicon-single-task:hover {
+   fill: #32c1ff;
+   cursor: pointer;
+ }
+
  .XIcon:hover {
    fill: #32c1ff;
  }
@@ -448,6 +461,7 @@
    margin: 0 -30px;
    padding: 0 30px;
    position: relative;
+   justify-content: flex-end;
  }
 
  .single-task-pane-title {
