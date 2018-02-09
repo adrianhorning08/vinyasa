@@ -11,6 +11,8 @@ export class TaskShow extends React.Component {
     };
     this.updateField = this.updateField.bind(this);
     this.close = this.close.bind(this);
+    this.closeWithEnterKey = this.closeWithEnterKey.bind(this);
+    this.delete = this.delete.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -40,8 +42,16 @@ export class TaskShow extends React.Component {
     };
   }
 
+  closeWithEnterKey() {
+    var key = window.event.keyCode;
+    console.log(window.event.key);
+    if (key === 13) {
+      console.log('worked');
+      this.close();
+    }
+  }
+
   close() {
-    console.log(this.props.history);
     let path = this.props.location.pathname.split('/')[2];
     let id = this.props.location.pathname.split('/')[3];
     let action;
@@ -55,8 +65,21 @@ export class TaskShow extends React.Component {
       .then(() => this.props.history.push(`/dashboard/${path}/${id}`));
   }
 
-  render() {
+  delete() {
+    let path = this.props.location.pathname.split('/')[2];
+    let id = this.props.location.pathname.split('/')[3];
+    let action;
+    if (path === 'users') {
+      action = this.props.fetchUser;
+    } else {
+      action = this.props.fetchProject;
+    }
+    this.props.deleteTask(this.state.id)
+      .then(() => action(id))
+      .then(() => this.props.history.push(`/dashboard/${path}/${id}`));
+  }
 
+  render() {
     if (this.props.currentTask !== null) {
       let task = this.props.currentTask;
       return (
@@ -73,17 +96,20 @@ export class TaskShow extends React.Component {
           </div>
           <div className="single-task-pane-title">
             <div className="single-task-pane-checkbox">
-              <svg className="Icon PlusIcon CompleteIcon Big" viewBox="0 0 32 32">
+              <svg onClick={this.delete}
+                className="Icon PlusIcon CompleteIcon Big" viewBox="0 0 32 32">
                 <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615">
                 </polygon>
               </svg>
             </div>
-              <textarea
+              <input
                 placeholder="Write a task name"
+                onKeyPress={this.closeWithEnterKey}
                 value={this.state.title}
                 onChange={this.updateField('title')}
+                onBlur={this.close}
                 >
-              </textarea>
+              </input>
 
           </div>
           <textarea
