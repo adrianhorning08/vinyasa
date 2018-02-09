@@ -1,9 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export class TaskShow extends React.Component {
   constructor(props) {
     super(props);
-    this.close = this.close.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -20,18 +20,22 @@ export class TaskShow extends React.Component {
     this.props.fetchTask(taskId);
   }
 
-  close() {
-    console.log(this.props.location.split('/'));
-  }
-
   render() {
+    let path = this.props.location.pathname.split('/')[2];
+    let id = this.props.location.pathname.split('/')[3];
+    if (path === 'users') {
+      path = `/dashboard/users/${id}`;
+    } else {
+      path = `/dashboard/projects/${id}`;
+    }
+
     if (this.props.currentTask !== null) {
       let task = this.props.currentTask;
       return (
         <div className="single-task-pane">
           <div className="single-task-pane-toolbar">
-            <div onClick={this.close}
-              className="single-task-close">
+            <div className="single-task-close">
+              <Link to={path}>Close</Link>
               <svg
                 className="XIcon CloseButton-xIcon"
                 viewBox="0 0 32 32"
