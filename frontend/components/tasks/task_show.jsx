@@ -24,6 +24,7 @@ export class TaskShow extends React.Component {
 
   render() {
     if (this.props.currentTask !== null) {
+      let task = this.props.currentTask;
       return (
         <div className="single-task-pane">
           <div className="single-task-pane-toolbar">
@@ -31,12 +32,15 @@ export class TaskShow extends React.Component {
           </div>
           <div className="single-task-pane-title">
             <div className="single-task-pane-checkbox">
-              <i className="far fa-check-circle"></i>
+              <svg onClick={this.completeTask} className="Icon PlusIcon" viewBox="0 0 32 32">
+                <polygon points="27.672,4.786 10.901,21.557 4.328,14.984 1.5,17.812 10.901,27.214 30.5,7.615">
+                </polygon>
+              </svg>
             </div>
-            {this.props.currentTask.title}
+            {task.title}
           </div>
           <div className="single-task-pane-description">
-            {this.props.currentTask.description}
+            {task.description}
           </div>
         </div>
       );

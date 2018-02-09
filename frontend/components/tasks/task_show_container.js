@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { TaskShow } from './task_show';
 import { withRouter } from 'react-router';
-import { fetchTask } from '../../actions/task_actions';
+import { fetchTask, deleteTask } from '../../actions/task_actions';
 
 const mapStateToProps = state => {
   return {
@@ -12,7 +12,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTask: id => dispatch(fetchTask(id))
+    fetchTask: id => dispatch(fetchTask(id)),
+    deleteTask: id => dispatch(deleteTask(id))
   };
 };
 

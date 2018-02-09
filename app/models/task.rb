@@ -13,8 +13,11 @@
 #
 
 class Task < ApplicationRecord
-  validates :title, presence: true
 
   belongs_to :user
-  belongs_to :project
+  belongs_to :project,
+    primary_key: :id,
+    foreign_key: :project_id,
+    class_name: 'Project',
+    optional: true
 end

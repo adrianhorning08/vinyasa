@@ -26,7 +26,7 @@ export const tasksReducer = (state = _nullTask, action) => {
       return newState;
     case REMOVE_TASK:
       newState = state;
-      delete newState.tasks[action.project.id];
+      delete newState.tasks[action.task.id];
       return newState;
     default:
       return state;
