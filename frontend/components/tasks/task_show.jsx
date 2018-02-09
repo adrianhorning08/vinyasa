@@ -19,7 +19,12 @@ export class TaskShow extends React.Component {
     let nextPath = nextProps.location.pathname.split('/')[4];
     if (taskId !== nextId && nextPath === 'tasks') {
       this.props.fetchTask(nextId)
-        .then(res => this.setState({title:[res.task.title][0], description:[res.task.description][0]}));
+        .then(res => this.setState(
+          {
+            title:[res.task.title][0],
+            description:[res.task.description][0],
+            id: nextId
+          }));
     }
   }
 
@@ -36,15 +41,18 @@ export class TaskShow extends React.Component {
   }
 
   close() {
+    console.log(this.props.history);
     let path = this.props.location.pathname.split('/')[2];
     let id = this.props.location.pathname.split('/')[3];
+    let action;
     if (path === 'users') {
-      path = `/dashboard/users/${id}`;
+      action = this.props.fetchUser;
     } else {
-      path = `/dashboard/projects/${id}`;
+      action = this.props.fetchProject;
     }
-
-    this.props.history.push(path);
+    this.props.updateTask(this.state)
+      .then(() => action(id))
+      .then(() => this.props.history.push(`/dashboard/${path}/${id}`));
   }
 
   render() {
