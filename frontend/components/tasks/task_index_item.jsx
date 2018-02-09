@@ -48,6 +48,7 @@ export class TaskIndexItem extends React.Component {
 
     return (
       <div className="task-item">
+        <Link to={`/dashboard/${pathname}/${id}/tasks/${this.props.task.id}`}>
         <div className="task-content">
           <div className="checkbox">
             <svg onClick={this.completeTask} className="Icon PlusIcon CompleteIcon Small" viewBox="0 0 32 32">
@@ -55,17 +56,15 @@ export class TaskIndexItem extends React.Component {
               </polygon>
             </svg>
           </div>
-            <Link to={`/dashboard/${pathname}/${id}/tasks/${this.props.task.id}`}>
               <textarea
                 placeholder="Write a task name"
                 value={this.state.title}
                 className="task-name-input"
                 onChange={this.updateField()}
                 rows="1"
-                >
-              </textarea>
-            </Link>
+                />
         </div>
+      </Link>
       </div>
     );
   }
