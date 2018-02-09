@@ -5,11 +5,20 @@ import { Link } from 'react-router-dom';
 export class TaskIndexItem extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      title: ''
+    };
     this.completeTask = this.completeTask.bind(this);
+    this.updateField = this.updateField.bind(this);
+  }
+
+  updateField() {
+    return e => {
+      return this.setState({title: e.target.value});
+    };
   }
 
   completeTask() {
-    console.log(this.props);
     let pathname = this.props.history.location.pathname.split('/');
     let id = Number(this.props.history.location.pathname.match(/\d+/));
     let action;
@@ -36,7 +45,13 @@ export class TaskIndexItem extends React.Component {
             </svg>
           </div>
           <div className="task-title">
-            <Link to={`/dashboard/tasks/${this.props.task.id}`}>{this.props.task.title}</Link>
+            <Link to={`/dashboard/tasks/${this.props.task.id}`}>
+              <textarea
+                value={this.props.task.title}
+                className="task-name-input"
+                >
+              </textarea>
+            </Link>
           </div>
         </div>
       </div>

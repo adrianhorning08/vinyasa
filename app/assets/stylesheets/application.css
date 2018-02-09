@@ -452,26 +452,27 @@
 
  .single-task-pane-title {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   margin-left: -10px;
   position: relative;
   margin: 10px 0;
  }
 
- .single-task-pane-checkbox {
-   align-items: center;
-   display: inline-flex;
-   height: 30px;
-   justify-content: center;
-   width: 30px;
-   border: 1px solid #b7bfc6;
-   border-radius: 50%;
-   box-sizing: border-box;
-   flex: 0 0 auto;
-   font-size: 13px;
-   line-height: 1;
-   display: inline-block;
-   fill: #b7bfc6;
+ .single-task-pane-title-textarea:hover {
+   border: 1px solid #e0e6e8;
+ }
+
+ .single-task-pane-title-textarea:active {
+   border: 1px solid #e0e6e8;
+ }
+
+.single-task-pane-checkbox {
+  margin-left: 10px;
+}
+
+ .Big {
+  width: 18px !important;
+  height: 18px !important;
  }
 
  .CheckIcon {
@@ -485,6 +486,15 @@
   margin-top: 5px;
   min-height: 140px;
   width: 435px;
+  margin-left: 10px;
+ }
+
+ .single-task-close {
+   border: 1px solid black;
+   height: 10px;
+   width: 10px;
+   display: flex;
+   justify-content: flex-start;
  }
 
  .task-item {
@@ -492,6 +502,27 @@
    margin-bottom: -1px;
    padding-bottom: 1px;
    position: relative;
+ }
+
+ textarea {
+   background: transparent;
+   display: block;
+   border-radius: 0;
+   height: 20px;
+   outline: 0;
+   overflow: hidden;
+   resize: none;
+   top: 0;
+   width: 100%;
+ }
+
+ .single-task-pane-title {
+ }
+
+ .single-task-pane-description {
+   border: 1px solid #e0e6e8;
+   min-height: 42px;
+   padding: 4px 9px;
  }
 
  .task-content {
@@ -505,7 +536,7 @@
  }
 
  .checkbox {
-   
+   margin-right: 10px;
  }
 
  .task-content:hover {
@@ -516,18 +547,17 @@
    border-top: 1px solid #e0e6e8;
  }
 
- .fa-check-circle {
-   width: 18px;
-   height: 18px;
+ .CompleteIcon {
+   width: 12px;
+   height: 12px;
    margin: 0 10px 0 0;
    transition: 200ms box-shadow,200ms color,200ms background,200ms fill;
    color: #848f99;
    fill: #848f99;
    border-radius: 50%;
-   font-size: 20px;
  }
 
- .fa-check-circle:hover {
+ .CompleteIcon:hover {
    cursor: pointer;
    background-color: #e2fffa;
    border-color: #25e8c8;
