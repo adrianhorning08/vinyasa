@@ -35,6 +35,17 @@ export class TaskIndexItem extends React.Component {
   }
 
   render() {
+    let pathname = this.props.history.location.pathname.split('/');
+    let id = Number(this.props.history.location.pathname.match(/\d+/));
+    if (pathname[2] === 'projects') {
+      pathname = 'projects';
+    } else if (pathname[2] === 'users') {
+      pathname = 'users';
+    } else if (pathname[1] === 'dashboard') {
+      pathname = 'users';
+      id = this.props.currentUser.id;
+    }
+
     return (
       <div className="task-item">
         <div className="task-content">
@@ -45,7 +56,7 @@ export class TaskIndexItem extends React.Component {
             </svg>
           </div>
           <div className="task-title">
-            <Link to={`/dashboard/tasks/${this.props.task.id}`}>
+            <Link to={`/dashboard/${pathname}/${id}/tasks/${this.props.task.id}`}>
               <textarea
                 value={this.props.task.title}
                 className="task-name-input"

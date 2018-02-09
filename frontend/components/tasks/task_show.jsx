@@ -3,24 +3,25 @@ import React from 'react';
 export class TaskShow extends React.Component {
   constructor(props) {
     super(props);
+    this.close = this.close.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    let id = Number(this.props.location.pathname.match(/\d+/));
-    let nextId = Number(nextProps.location.pathname.match(/\d+/));
-    let nextPath = nextProps.location.pathname.split('/')[2];
-    if (id !== nextId && nextPath === 'tasks') {
+    let taskId = this.props.location.pathname.split('/')[5];
+    let nextId = nextProps.location.pathname.split('/')[5];
+    let nextPath = nextProps.location.pathname.split('/')[4];
+    if (taskId !== nextId && nextPath === 'tasks') {
       this.props.fetchTask(nextId);
     }
   }
 
   componentDidMount() {
-    console.log(this.props);
-    let id = Number(this.props.location.pathname.match(/\d+/));
-    let pathname = this.props.location.pathname.split('/')[2];
-    if (pathname === 'tasks') {
-      this.props.fetchTask(id);
-    }
+    let taskId = this.props.location.pathname.split('/')[5];
+    this.props.fetchTask(taskId);
+  }
+
+  close() {
+    console.log(this.props.location.split('/'));
   }
 
   render() {
@@ -29,7 +30,7 @@ export class TaskShow extends React.Component {
       return (
         <div className="single-task-pane">
           <div className="single-task-pane-toolbar">
-            <div
+            <div onClick={this.close}
               className="single-task-close">
               <svg
                 className="XIcon CloseButton-xIcon"
@@ -47,9 +48,8 @@ export class TaskShow extends React.Component {
                 </polygon>
               </svg>
             </div>
-            <textarea className="single-task-pane-title-textarea">
               {task.title}
-            </textarea>
+
           </div>
           <textarea className="single-task-pane-description">
             {task.description}

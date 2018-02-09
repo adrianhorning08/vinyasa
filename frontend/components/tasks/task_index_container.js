@@ -10,7 +10,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     tasks: state.tasks,
     projects: state.projects,
-    currentUser: state.session.currentUser
+    currentUser: state.session.currentUser,
+    currentProject: state.projects
   };
 };
 
