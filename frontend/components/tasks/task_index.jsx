@@ -62,7 +62,7 @@ export class TaskIndex extends React.Component {
           </div>
             {Object.values(this.props.tasks.tasks).map(task => {
               return <TaskIndexItem
-                key={task.id* Math.random()}
+                key={task.id}
                 task={task}
                 deleteTask={this.props.deleteTask}
                 fetchUser={this.props.fetchUser}
@@ -70,6 +70,7 @@ export class TaskIndex extends React.Component {
                 history={this.props.history}
                 match={this.props.match}
                 currentUser={this.props.currentUser}
+                updateTask={this.props.updateTask}
                 />;
             })}
         </div>

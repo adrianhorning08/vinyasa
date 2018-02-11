@@ -4,7 +4,7 @@ import { TaskIndex } from './task_index';
 import { withRouter } from 'react-router';
 import { fetchProject } from '../../actions/project_actions';
 import { fetchUser } from '../../actions/user_actions';
-import { createTask, deleteTask } from '../../actions/task_actions';
+import { createTask, deleteTask, updateTask } from '../../actions/task_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -20,7 +20,8 @@ const mapDispatchToProps = dispatch => {
     fetchProject: id => dispatch(fetchProject(id)),
     fetchUser: id => dispatch(fetchUser(id)),
     createTask: (task) => dispatch(createTask(task)),
-    deleteTask: id => dispatch(deleteTask(id))
+    deleteTask: id => dispatch(deleteTask(id)),
+    updateTask: task => dispatch(updateTask(task))
   };
 };
 

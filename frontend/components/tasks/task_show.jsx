@@ -45,7 +45,7 @@ export class TaskShow extends React.Component {
   closeWithEnterKey() {
     var key = window.event.keyCode;
     if (key === 13) {
-      console.log('worked');
+
       this.close();
     }
   }

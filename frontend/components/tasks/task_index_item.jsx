@@ -6,10 +6,12 @@ export class TaskIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.task.title
+      title: this.props.task.title,
+      id: this.props.task.id
     };
     this.completeTask = this.completeTask.bind(this);
     this.updateField = this.updateField.bind(this);
+    this.update = this.update.bind(this);
   }
 
   updateField() {
@@ -32,6 +34,12 @@ export class TaskIndexItem extends React.Component {
     }
     this.props.deleteTask(this.props.task.id)
       .then(() => action(id));
+  }
+
+  update(e) {
+    let taskId = Number(e.target.id);
+    let taskTitle = e.target.value;
+    this.props.updateTask({title: taskTitle, id: taskId});
   }
 
   render() {
@@ -57,10 +65,12 @@ export class TaskIndexItem extends React.Component {
             </svg>
           </div>
               <textarea
+                id={this.state.id}
                 placeholder="Write a task name"
                 value={this.state.title}
                 className="task-name-input"
                 onChange={this.updateField()}
+                onBlur={this.update}
                 rows="1"
                 />
         </div>
