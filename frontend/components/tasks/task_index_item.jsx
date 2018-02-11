@@ -14,10 +14,16 @@ export class TaskIndexItem extends React.Component {
     this.update = this.update.bind(this);
   }
 
-  updateField() {
-    return e => {
-      return this.setState({title: e.target.value});
-    };
+  updateField(e) {
+    if (this.state.title !== e.target.value) {
+      this.setState({title: e.target.value});
+      this.props.updateTask(this.state);
+    }
+
+  }
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps);
   }
 
   completeTask() {
@@ -39,7 +45,6 @@ export class TaskIndexItem extends React.Component {
   update(e) {
     let taskId = Number(e.target.id);
     let taskTitle = e.target.value;
-    this.props.updateTask({title: taskTitle, id: taskId});
   }
 
   render() {
@@ -69,7 +74,7 @@ export class TaskIndexItem extends React.Component {
                 placeholder="Write a task name"
                 value={this.state.title}
                 className="task-name-input"
-                onChange={this.updateField()}
+                onChange={this.updateField}
                 onBlur={this.update}
                 rows="1"
                 />
