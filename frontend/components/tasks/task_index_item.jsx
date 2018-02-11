@@ -19,7 +19,6 @@ export class TaskIndexItem extends React.Component {
       this.setState({title: e.target.value});
       this.props.updateTask(this.state);
     }
-
   }
 
   componentWillReceiveProps(nextProps) {

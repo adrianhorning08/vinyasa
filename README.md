@@ -2,8 +2,10 @@
 
 [Vinyasa live](https://vinyasa.herokuapp.com/#/dashboard)
 
-Vinyasa is a full-stack application, modeled after [Asana](https://asana.com/?utm_source=app.asana.com&utm_campaign=app.asana.com#close) built with a Rails backend and React/Redux frontend. Authentication implemented using BCyrpt.
+Vinyasa is a clone of [Asana](https://asana.com/?utm_source=app.asana.com&utm_campaign=app.asana.com#close)It is built with a Rails backend and React/Redux frontend. Authentication implemented using BCyrpt.
 
+![vinyasa_login](app/assets/images/vinyasa login.png)
+![vinyasa_main](app/assets/images/vinyasa main.png)
 ## Features
 
   * Simple todo app
@@ -49,15 +51,22 @@ end
 
 Then the data would hit my reducers, and update my state appropriately.
 
-### Fetching data
-Because of all the dependencies, fetching the data got pretty wonky. In the future I will probably refactor the requests. For example, after updating a task, I have to fetch a user or a project depending on if the user is on a user page, or a project page.
+### Realtime task update
+By far, the hardest thing was to be able to create a task in the main task list, and be able to see the task name update in real time on the right pan showing the details of that task.
+
+![adding_task](app/assets/images/vinyasa adding a task.png)
+
+To do this, anytime the field in the main task index was updated (ie, a letter was added or subtracted), it would update the request via a patch request:
 ```
-this.props.updateTask(this.state)
-  .then(() => action(id))
-  .then(() => this.props.history.push(`/dashboard/${path}/${id}`));
+updateField(e) {
+  if (this.state.title !== e.target.value) {
+    this.setState({title: e.target.value});
+    this.props.updateTask(this.state);
+  }
+}
 ```
 
-It seems like it would make more sense to fetch the tasks, team members, and projects separately.
+This definitely creates a lot of requests going to the server. If I had more time I think I would use a websocket for this.
 
 
 ## Ideas for Future Work
