@@ -23,6 +23,7 @@ export class TaskIndexItem extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     console.log(nextProps);
+    // I do need this for when I edit the task in the right pane
   }
 
   completeTask() {
