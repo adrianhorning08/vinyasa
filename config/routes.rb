@@ -11,4 +11,5 @@ Rails.application.routes.draw do
     resources :projects, except: [:new, :edit]
     resources :tasks, except: [:new, :edit]
   end
+  mount ActionCable.server => '/cable'
 end

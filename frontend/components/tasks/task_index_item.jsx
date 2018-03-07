@@ -16,14 +16,14 @@ export class TaskIndexItem extends React.Component {
 
   updateField(e) {
     if (this.state.title !== e.target.value) {
-      this.setState({title: e.target.value});
-      this.props.updateTask(this.state);
+      this.setState({title: e.target.value}, () => {
+        this.props.updateTask(this.state);
+      });
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
-    // I do need this for when I edit the task in the right pane
+    // do i need to use this?
   }
 
   completeTask() {
