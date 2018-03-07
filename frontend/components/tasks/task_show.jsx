@@ -43,7 +43,9 @@ export class TaskShow extends React.Component {
 
   updateField(field) {
      return e => {
-      return this.setState({[field]: e.target.value});
+      return this.setState({[field]: e.target.value}, () => {
+        this.props.updateTask(this.state);
+      });
     };
   }
 
@@ -65,7 +67,6 @@ export class TaskShow extends React.Component {
       action = this.props.fetchProject;
     }
     this.props.updateTask(this.state)
-      .then(() => action(id))
       .then(() => this.props.history.push(`/dashboard/${path}/${id}`));
   }
 
