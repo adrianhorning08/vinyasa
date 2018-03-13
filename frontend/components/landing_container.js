@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Landing } from './header';
+import { Landing } from './landing';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = state => {
