@@ -10,7 +10,7 @@ const App = () => (
 
 <div>
   <Switch>
-    <Route path="/" component={LandingContainer} />
+    // <Route path="/" component={LandingContainer} />
     <AuthRoute exact path="/login" component={SessionFormContainer} />
     <AuthRoute exact path="/signup" component={SessionFormContainer} />
     <ProtectedRoute path="/dashboard" component={Dashboard} />
