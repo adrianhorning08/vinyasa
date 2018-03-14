@@ -19,7 +19,6 @@ export class TaskShow extends React.Component {
     let taskId = this.props.location.pathname.split('/')[5];
     let nextId = nextProps.location.pathname.split('/')[5];
     let nextPath = nextProps.location.pathname.split('/')[4];
-// comment
     if (taskId === nextId && nextProps.currentTask.title !== this.state.title) {
       this.setState({title: nextProps.currentTask.title});
     }
@@ -36,7 +35,6 @@ export class TaskShow extends React.Component {
   }
 
   componentDidMount() {
-    console.log('test');
     let taskId = this.props.location.pathname.split('/')[5];
     this.props.fetchTask(taskId)
       .then(res => this.setState({title:[res.task.title][0], description:[res.task.description][0]}));
