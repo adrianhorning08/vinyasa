@@ -11,7 +11,6 @@ export class TaskIndexItem extends React.Component {
     };
     this.completeTask = this.completeTask.bind(this);
     this.updateField = this.updateField.bind(this);
-    this.update = this.update.bind(this);
   }
 
   updateField(e) {
@@ -23,10 +22,9 @@ export class TaskIndexItem extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // if (nextProps.task.title !== this.state.title) {
-    //   this.setState({title: nextProps.task.title});
-    // }
-    console.log(nextProps);
+    if (nextProps.currentTask.id === this.state.id) {
+      this.setState({title: nextProps.currentTask.title});
+    }
   }
 
   completeTask() {
@@ -43,11 +41,6 @@ export class TaskIndexItem extends React.Component {
     }
     this.props.deleteTask(this.props.task.id)
       .then(() => action(id));
-  }
-
-  update(e) {
-    let taskId = Number(e.target.id);
-    let taskTitle = e.target.value;
   }
 
   render() {
