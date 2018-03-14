@@ -36,6 +36,7 @@ export class TaskShow extends React.Component {
   }
 
   componentDidMount() {
+    console.log('test');
     let taskId = this.props.location.pathname.split('/')[5];
     this.props.fetchTask(taskId)
       .then(res => this.setState({title:[res.task.title][0], description:[res.task.description][0]}));
