@@ -23,9 +23,10 @@ export class TaskIndexItem extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.task.title !== this.state.title) {
-      this.setState({title: nextProps.task.title});
-    }
+    // if (nextProps.task.title !== this.state.title) {
+    //   this.setState({title: nextProps.task.title});
+    // }
+    console.log(nextProps);
   }
 
   completeTask() {

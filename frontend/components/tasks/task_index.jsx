@@ -64,6 +64,7 @@ export class TaskIndex extends React.Component {
               return <TaskIndexItem
                 key={task.id}
                 task={task}
+                currentTask={this.props.tasks.currentTask}
                 deleteTask={this.props.deleteTask}
                 fetchUser={this.props.fetchUser}
                 fetchProject={this.props.fetchProject}
