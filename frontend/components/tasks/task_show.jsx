@@ -66,7 +66,7 @@ export class TaskShow extends React.Component {
     } else {
       action = this.props.fetchProject;
     }
-    this.props.updateTask(this.state)
+    action(id)
       .then(() => this.props.history.push(`/dashboard/${path}/${id}`));
   }
 
@@ -112,7 +112,6 @@ export class TaskShow extends React.Component {
                 onKeyPress={this.closeWithEnterKey}
                 value={this.state.title}
                 onChange={this.updateField('title')}
-                onBlur={this.close}
                 >
               </input>
 

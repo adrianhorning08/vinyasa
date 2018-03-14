@@ -23,7 +23,7 @@ export class TaskIndexItem extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
+    // console.log(nextProps.task);
   //   if (nextProps) {
   //   let taskId = this.props.location.pathname.split('/')[5];
   //     let nextId = nextProps.location.pathname.split('/')[5];
