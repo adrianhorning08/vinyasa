@@ -19,6 +19,9 @@ export class TaskShow extends React.Component {
     let taskId = this.props.location.pathname.split('/')[5];
     let nextId = nextProps.location.pathname.split('/')[5];
     let nextPath = nextProps.location.pathname.split('/')[4];
+
+    // if there is an edit to the current tasks, update the state of the show
+    // this is the realtime editing feature
     if (taskId === nextId && nextProps.currentTask.title !== this.state.title) {
       this.setState({title: nextProps.currentTask.title});
     }
@@ -49,7 +52,6 @@ export class TaskShow extends React.Component {
   }
 
   updateTask() {
-    console.log('got here');
     this.props.updateTask(this.state);
   }
 
