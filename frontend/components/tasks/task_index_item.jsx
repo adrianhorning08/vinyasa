@@ -16,13 +16,13 @@ export class TaskIndexItem extends React.Component {
   updateField(e) {
     if (this.state.title !== e.target.value) {
       this.setState({title: e.target.value}, () => {
-        this.props.updateTask(this.state);
+        this.props.updateTaskInStore(this.state);
       });
     }
   }
 
   componentWillReceiveProps(nextProps) {
-    if (nextProps.currentTask.id === this.state.id) {
+    if (Number(nextProps.currentTask.id) === this.state.id) {
       this.setState({title: nextProps.currentTask.title});
     }
   }
