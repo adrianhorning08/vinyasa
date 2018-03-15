@@ -43,7 +43,7 @@ export class TaskShow extends React.Component {
   updateField(field) {
      return e => {
       return this.setState({[field]: e.target.value}, () => {
-        this.props.updateTask(this.state);
+        this.props.updateTaskInStore(this.state);
       });
     };
   }

@@ -19,6 +19,9 @@ export const createTask = task => dispatch => {
   return APIutil.createTask(task)
     .then(serverTask => dispatch(receieveTask(serverTask)));
 };
+export const updateTaskInStore = task => dispatch => {
+  return dispatch(receieveTask(task));
+};
 
 export const updateTask = task => dispatch => {
   return APIutil.updateTask(task)
