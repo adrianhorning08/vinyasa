@@ -11,6 +11,7 @@ export class TaskIndexItem extends React.Component {
     };
     this.completeTask = this.completeTask.bind(this);
     this.updateField = this.updateField.bind(this);
+    this.updateTask = this.updateTask.bind(this);
   }
 
   updateField(e) {
@@ -21,9 +22,15 @@ export class TaskIndexItem extends React.Component {
     }
   }
 
+  updateTask() {
+    this.props.updateTask(this.state);
+  }
+
   componentWillReceiveProps(nextProps) {
-    if (Number(nextProps.currentTask.id) === this.state.id) {
-      this.setState({title: nextProps.currentTask.title});
+    if (nextProps.currentTask) {
+      if (Number(nextProps.currentTask.id) === this.state.id) {
+        this.setState({title: nextProps.currentTask.title});
+      }
     }
   }
 
@@ -67,11 +74,11 @@ export class TaskIndexItem extends React.Component {
           </div>
               <textarea
                 id={this.state.id}
+                onBlur={this.updateTask}
                 placeholder="Write a task name"
                 value={this.state.title}
                 className="task-name-input"
                 onChange={this.updateField}
-                onBlur={this.update}
                 rows="1"
                 />
         </div>

@@ -11,8 +11,8 @@ export class TaskShow extends React.Component {
     };
     this.updateField = this.updateField.bind(this);
     this.close = this.close.bind(this);
-    this.closeWithEnterKey = this.closeWithEnterKey.bind(this);
     this.delete = this.delete.bind(this);
+    this.updateTask = this.updateTask.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -48,12 +48,9 @@ export class TaskShow extends React.Component {
     };
   }
 
-  closeWithEnterKey() {
-    var key = window.event.keyCode;
-    if (key === 13) {
-
-      this.close();
-    }
+  updateTask() {
+    console.log('got here');
+    this.props.updateTask(this.state);
   }
 
   close() {
@@ -108,6 +105,7 @@ export class TaskShow extends React.Component {
             </div>
               <input
                 placeholder="Write a task name"
+                onBlur={this.updateTask}
                 onKeyPress={this.closeWithEnterKey}
                 value={this.state.title}
                 onChange={this.updateField('title')}
