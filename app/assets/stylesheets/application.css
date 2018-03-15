@@ -531,7 +531,7 @@
    overflow: hidden;
    resize: none;
    top: 0;
-   width: 300px;
+   width: 100%;
  }
 
  .single-task-pane-title {
