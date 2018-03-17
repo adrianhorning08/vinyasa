@@ -13,11 +13,27 @@ It is built with a Rails backend and React/Redux frontend. Authentication implem
   * Users can create profiles and login with secure authentication
   * Users can create teams, projects, and tasks
   * Users can view and assign themselves (or others) tasks
+  * Realtime task task title update
 
 ## Implementation
 
+### Realtime task update
+By far, the hardest thing was to be able to create a task in the main task list, and be able to see the task name update in real time on the right pan showing the details of that task.
+
+![adding_task](https://github.com/adrianhorning08/vinyasa/blob/master/vinyasa%20adding%20a%20task.png)
+
+To do this, anytime the field in the main task index was updated (ie, a letter was added or subtracted), it would update the request via a patch request:
+```
+updateField(e) {
+  if (this.state.title !== e.target.value) {
+    this.setState({title: e.target.value});
+    this.props.updateTask(this.state);
+  }
+}
+```
+
 ### Getting all dependencies
-The greatest struggle that I had was fetching the correct dependencies.
+Another difficult thing was fetching the correct dependencies.
 Dependencies:
   * Teams/Projects have many users
   * Users have many teams/Projects
@@ -52,28 +68,9 @@ end
 
 Then the data would hit my reducers, and update my state appropriately.
 
-### Realtime task update
-By far, the hardest thing was to be able to create a task in the main task list, and be able to see the task name update in real time on the right pan showing the details of that task.
-
-![adding_task](https://github.com/adrianhorning08/vinyasa/blob/master/vinyasa%20adding%20a%20task.png)
-
-To do this, anytime the field in the main task index was updated (ie, a letter was added or subtracted), it would update the request via a patch request:
-```
-updateField(e) {
-  if (this.state.title !== e.target.value) {
-    this.setState({title: e.target.value});
-    this.props.updateTask(this.state);
-  }
-}
-```
-
-This definitely creates a lot of requests going to the server. If I had more time I think I would use a websocket for this.
-
 
 ## Ideas for Future Work
 
-  * Edit a task from the main task index list
-  * Be able to edit the task either in the index list or in the right pane window and see real-time updates
   * In the main task right pane window, users should be able to assign other users a task and set a due date
   * Users should only be able to see team specific tasks (right now they see all their tasks across all teams)
   * Users should be able to invite other people to join their team via email
