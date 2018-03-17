@@ -7,6 +7,9 @@ let oldState = {
 
 export const sessionReducer = (state = oldState, action) => {
   let newState = {};
+  // this is pretty jacked up right here.
+  // I set this up pretty bad, so here I had to mutate the state in order to get it to work
+  // Oh, I think it was how I set up the jbuilder
   if (action.payload === null) {
     newState.currentUser = null;
     return newState;

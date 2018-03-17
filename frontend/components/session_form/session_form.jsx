@@ -18,7 +18,6 @@ export class SessionForm extends React.Component {
     }
   }
 
-
   update(field) {
     return e => {
       this.setState({[field]: e.target.value});
@@ -45,7 +44,6 @@ export class SessionForm extends React.Component {
     e.preventDefault();
     this.props.login({username: 'Luke Skywalker', password: 'password'});
   }
-
 
   render() {
     let text = this.props.formType === 'login' ? 'Log In' : 'Sign Up';
@@ -107,5 +105,4 @@ export class SessionForm extends React.Component {
     </div>
     );
   }
-
 }
