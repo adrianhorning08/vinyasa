@@ -22,6 +22,7 @@ One of the most difficult things to figure out was how to have the realtime task
 A user should be able to edit the title of a task in either the main index container, or in the task detail that appears in the right pane.
 
 ![realtime task update](https://media.giphy.com/media/Xop0pN6zv92avT8fRM/giphy.gif)
+<img src="https://media.giphy.com/media/Xop0pN6zv92avT8fRM/giphy.gif" width="400" height="400" />
 
 ![adding_task](https://github.com/adrianhorning08/vinyasa/blob/master/vinyasa%20adding%20a%20task.png)
 
