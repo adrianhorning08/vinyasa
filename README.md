@@ -37,12 +37,13 @@ updateField(e) {
 ```
 
 ### Getting all dependencies
-Another difficult thing was fetching the correct dependencies.
-Dependencies:
-  * Teams/Projects have many users
-  * Users have many teams/Projects
+Another difficult thing was fetching the correct dependencies and not having duplicate data in the database.
 
-To solve this I created Team Membership and Project Membership join tables. As an example, here is what the users model looked like:
+Dependencies:
+  * Teams/Projects have many Users
+  * Users have many Teams/Projects
+
+To solve the issue of not creating duplicate data in the database, I created Team Membership and Project Membership join tables, this way, I did not need to keep track of foreign keys in the Team/Project tables respectively. As an example, here is what the users model looked like:
 ```
 has_many :team_memberships
 has_many :teams,
@@ -54,7 +55,8 @@ has_many :projects,
   source: :project
 has_many :tasks
 ```
-From there, it was simply a matter of fetching the data, and formatting the json to have the data that I wanted. For example, here is the json I fetched from a team:
+
+To solve getting the correct dependencies I used JBuilder to extract the associations I needed.
 
 ```
 json.team do
@@ -70,7 +72,7 @@ json.projects do
 end
 ```
 
-Then the data would hit my reducers, and update my state appropriately.
+Then the data would hit my reducers, and update my Redux store appropriately.
 
 
 ## Ideas for Future Work
