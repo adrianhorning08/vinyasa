@@ -19,16 +19,19 @@ It is built with a Rails backend and React/Redux frontend. Authentication implem
 
 ### Realtime task update
 One of the most difficult things to figure out was how to have the realtime task editing that Asana has.
-A user should be able to edit the title of a task in either the main index container, or in the task detail that appears in the right pane.
+
+A user should be able to edit the title of a task in either the main index container, or in the task detail that appears in the right pane, with both titles updating in realtime.
 
 <img src="https://media.giphy.com/media/Xop0pN6zv92avT8fRM/giphy.gif" width="800" height="400" />
 
-To do this, anytime the field in the main task index was updated (ie, a letter was added or subtracted), it would update the request via a patch request:
+To solve this, I did the following: whenever a user clicks on a task, a get request is sent that updates the current task in the Redux store.
+Whenever a user updates the input field, an action is dispatched to the Redux store that updates the current task in the store, but will not send an AJAX request until after the user clicks out of the input field.
+
 ```
 updateField(e) {
   if (this.state.title !== e.target.value) {
     this.setState({title: e.target.value});
-    this.props.updateTask(this.state);
+    this.props.updateTaskInStore(this.state);
   }
 }
 ```
