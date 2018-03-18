@@ -21,7 +21,7 @@ It is built with a Rails backend and React/Redux frontend. Authentication implem
 One of the most difficult things to figure out was how to have the realtime task editing that Asana has.
 A user should be able to edit the title of a task in either the main index container, or in the task detail that appears in the right pane.
 
-<iframe src="https://giphy.com/embed/Xop0pN6zv92avT8fRM" width="480" height="248" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/Xop0pN6zv92avT8fRM">via GIPHY</a></p>
+![alt text](https://giphy.com/embed/Xop0pN6zv92avT8fRM "realtime task update")
 
 ![adding_task](https://github.com/adrianhorning08/vinyasa/blob/master/vinyasa%20adding%20a%20task.png)
 
