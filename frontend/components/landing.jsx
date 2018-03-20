@@ -8,7 +8,12 @@ export class Landing extends React.Component {
   render() {
     return (
       <div>
-        landing
+        <header className="lading-header">
+
+        </header>
+        <section className="masthead">
+
+        </section>
       </div>
     );
   }
