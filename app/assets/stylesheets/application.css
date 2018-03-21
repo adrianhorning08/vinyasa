@@ -90,16 +90,18 @@ header {
 }
 
 .masthead {
-  background: url(https://d1gwm4cf8hecp4.cloudfront.net/svg/wave.svg);
-  background-size: cover;
-  background-position: 50%;
-  bottom: -1px;
-  content: "";
-  display: block;
-  min-height: 500px;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
+}
+
+.masthead::after {
+  background: url(https://d1gwm4cf8hecp4.cloudfront.net/svg/wave.svg) no-repeat top;
+    background-size: cover;
+    bottom: -1px;
+    content: "";
+    display: block;
+    min-height: 500px;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
 }
 
 /* main app view '/' */
