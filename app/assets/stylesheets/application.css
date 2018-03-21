@@ -321,6 +321,11 @@ header {
    align-items: center;
  }
 
+ .fa-caret-down {
+   padding-left: 6px;
+   padding-right: 6px;
+ }
+
  .topbar button {
    height: 20px;
    line-height: 5px;
@@ -349,6 +354,10 @@ header {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+}
+
+.dropdown-content h4{
+  padding-left: 6px;
 }
 
 .dropdown-content li a{
