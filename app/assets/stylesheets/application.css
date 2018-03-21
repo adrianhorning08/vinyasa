@@ -67,6 +67,8 @@
    border-color: #32c1ff;
    transition: background 200ms,border 200ms,box-shadow 200ms,color 200ms;
  }
+ /* Landing page */
+
 
 /* main app view '/' */
  .vinyasa_ui {
@@ -254,17 +256,17 @@
  }
 
  .sidebar-logo {
-   background-image: url("https://d3ki9tyy5l5ruj.cloudfront.net/obj/3ac85a538c3fc5bb08d0206ede04ae8aa13c20b2/inapp__logo_color_ondark_horizontal.svg");
+   background-image: url('vinyasa_small_dark.png');
    background-repeat: no-repeat;
    align-items: center;
-   background-position: 13px 10px;
+   background-position: 5px -5px;
    display: flex;
    height: 40px;
    flex-shrink: 0;
    justify-content: flex-end;
    background-size: 110px;
  }
-
+ 
  .topbar {
    background: #fff;
    border-bottom: 1px solid #e0e6e8;
