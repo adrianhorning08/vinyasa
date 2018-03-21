@@ -69,6 +69,30 @@
  }
  /* Landing page */
 
+header {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+  align-items: center;
+  font-weight: 500;
+  height: 56px;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+}
+
+.header-logo {
+  background: url('vinyasa_small_white.png')
+  no-repeat transparent 50%;
+    background-size: contain;
+    display: block;
+    height: 22px;
+    width: 112px;
+}
 
 /* main app view '/' */
  .vinyasa_ui {
@@ -256,17 +280,17 @@
  }
 
  .sidebar-logo {
-   background-image: url('vinyasa_small_dark.png');
+   background-image: url("https://d3ki9tyy5l5ruj.cloudfront.net/obj/3ac85a538c3fc5bb08d0206ede04ae8aa13c20b2/inapp__logo_color_ondark_horizontal.svg");
    background-repeat: no-repeat;
    align-items: center;
-   background-position: 5px -5px;
+   background-position: 13px 10px;
    display: flex;
    height: 40px;
    flex-shrink: 0;
    justify-content: flex-end;
    background-size: 110px;
  }
- 
+
  .topbar {
    background: #fff;
    border-bottom: 1px solid #e0e6e8;
