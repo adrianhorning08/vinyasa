@@ -70,28 +70,36 @@
  /* Landing page */
 
 header {
-  box-sizing: border-box;
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin-left: 0;
-  margin-right: 0;
-  align-items: center;
-  font-weight: 500;
   height: 56px;
+  width: 100%;
   padding-left: 16px;
   padding-right: 16px;
-  position: relative;
+  position: fixed;
+  border: 1px solid black;
 }
 
 .header-logo {
   background: url('vinyasa_small_white.png')
   no-repeat transparent 50%;
-    background-size: contain;
-    display: block;
-    height: 22px;
-    width: 112px;
+  background-size: contain;
+  display: block;
+  height: 100%;
+  width: 200px;
+  border: 1px solid black;
+  margin-left: -35px;
+}
+
+.masthead {
+  background: url(https://d1gwm4cf8hecp4.cloudfront.net/svg/wave.svg);
+  background-size: cover;
+  background-position: 50%;
+  bottom: -1px;
+  content: "";
+  display: block;
+  min-height: 500px;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
 
 /* main app view '/' */

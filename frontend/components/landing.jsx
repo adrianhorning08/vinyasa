@@ -7,10 +7,10 @@ export class Landing extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="landing">
         <header className="lading-header">
           <div className="header-logo">
-            
+
           </div>
         </header>
         <section className="masthead">
