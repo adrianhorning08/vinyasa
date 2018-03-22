@@ -11,6 +11,8 @@ export class Landing extends React.Component {
         <header className="lading-header">
           <div className="header-logo">
           </div>
+          <div className="right-header">
+          </div>
         </header>
         <section className="masthead">
           <div className="hero-container">

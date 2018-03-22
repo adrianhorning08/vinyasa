@@ -109,8 +109,17 @@ header {
   padding-bottom: 5px;
 }
 
-.get-started-hero {
-  
+.get-started-hero button {
+  letter-spacing: 1.25px;
+  background-color: #796eff;
+  box-shadow: none;
+  border: none;
+}
+
+.get-started-hero button:hover {
+  background-color: #594fc7;
+  border: none;
+  box-shadow: none;
 }
 
 .masthead::after {
