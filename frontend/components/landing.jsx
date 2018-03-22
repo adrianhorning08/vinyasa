@@ -18,7 +18,6 @@ export class Landing extends React.Component {
             <h1>forward</h1>
             <div className="hero-subtext">
               <p>Vinyasa is the easiest way for teams to</p>
-              <br/>
               <p>track their work - and get results.</p>
             </div>
             <div className="get-started-hero">

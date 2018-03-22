@@ -75,7 +75,6 @@ header {
   padding-left: 16px;
   padding-right: 16px;
   position: fixed;
-  border: 1px solid black;
 }
 
 .header-logo {
@@ -95,11 +94,24 @@ header {
 }
 
 .hero-container h1 {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 82px;
 }
 
-.
+.hero-subtext {
+  margin: 20px 0;
+}
+
+.hero-subtext p {
+  font-size: 24px;
+  font-weight: 100;
+  padding: 0;
+  padding-bottom: 5px;
+}
+
+.get-started-hero {
+  
+}
 
 .masthead::after {
   background: url(https://d1gwm4cf8hecp4.cloudfront.net/svg/wave.svg) no-repeat top;
@@ -181,8 +193,8 @@ header {
    overflow: auto;
  }
 
- .sidebar-section {
-
+ .sidebar-section a{
+   font-weight: 400;
  }
 
 .sidebar-title {
