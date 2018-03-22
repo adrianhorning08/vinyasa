@@ -85,23 +85,32 @@ header {
   display: block;
   height: 100%;
   width: 200px;
-  border: 1px solid black;
   margin-left: -35px;
 }
 
-.masthead {
+.hero-container {
+  height: 396px;
+  padding-top: 250px;
+  margin-left: 300px;
 }
+
+.hero-container h1 {
+  font-weight: 100;
+  font-size: 82px;
+}
+
+.
 
 .masthead::after {
   background: url(https://d1gwm4cf8hecp4.cloudfront.net/svg/wave.svg) no-repeat top;
-    background-size: cover;
-    bottom: -1px;
-    content: "";
-    display: block;
-    min-height: 500px;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
+  background-size: cover;
+  bottom: -1px;
+  content: "";
+  display: block;
+  min-height: 250px;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
 }
 
 /* main app view '/' */
