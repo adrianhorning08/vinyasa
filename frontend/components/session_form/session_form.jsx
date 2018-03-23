@@ -60,7 +60,7 @@ export class SessionForm extends React.Component {
     return (
       <div className="auth-page">
         <div className="site-title">
-          <Link to="/dashboard"><h1>vinyasa</h1></Link>
+          <Link to="/"><h1>vinyasa</h1></Link>
         </div>
         <div className="auth-form-container">
           <div className="login-title">

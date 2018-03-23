@@ -4,6 +4,11 @@ import { Link } from 'react-router-dom';
 export class Landing extends React.Component {
   constructor(props) {
     super(props);
+    this.linkToDash = this.linkToDash.bind(this);
+  }
+
+  linkToDash() {
+    this.props.history.push('/signup')
   }
 
   render() {
@@ -24,7 +29,7 @@ export class Landing extends React.Component {
               <p>track their work - and get results.</p>
             </div>
             <div className="get-started-hero">
-              <button>Get Started</button>
+              <button onClick={this.linkToDash}>Get Started</button>
             </div>
           </div>
         </section>
