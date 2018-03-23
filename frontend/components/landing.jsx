@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export class Landing extends React.Component {
   constructor(props) {
