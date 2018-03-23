@@ -75,6 +75,37 @@ header {
   padding-left: 16px;
   padding-right: 16px;
   position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.right-header {
+  display: flex;
+  width: 300px;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  color: #646f79;
+}
+
+.right-header button {
+  background-color: transparent;
+  border: 2px solid #796eff;
+  color: #796eff;
+  line-height: 34px;
+  letter-spacing: .5px;
+}
+
+.right-header button:hover {
+  box-shadow: none;
+  color: #fff;
+  background-color: #796eff;
+  border-color: #796eff;
+}
+
+.right-header a:hover {
+  color: #796eff;
 }
 
 .header-logo {

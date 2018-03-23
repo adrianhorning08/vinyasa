@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 export class Landing extends React.Component {
   constructor(props) {
     super(props);
-    this.linkToDash = this.linkToDash.bind(this);
+    this.linkToSignup = this.linkToSignup.bind(this);
   }
 
-  linkToDash() {
-    this.props.history.push('/signup')
+  linkToSignup() {
+    this.props.history.push('/signup');
   }
 
   render() {
@@ -18,6 +18,8 @@ export class Landing extends React.Component {
           <div className="header-logo">
           </div>
           <div className="right-header">
+            <Link to="/login">Log In</Link>
+            <button onClick={this.linkToSignup}>Get Started</button>
           </div>
         </header>
         <section className="masthead">
@@ -29,7 +31,7 @@ export class Landing extends React.Component {
               <p>track their work - and get results.</p>
             </div>
             <div className="get-started-hero">
-              <button onClick={this.linkToDash}>Get Started</button>
+              <button onClick={this.linkToSignup}>Get Started</button>
             </div>
           </div>
         </section>
