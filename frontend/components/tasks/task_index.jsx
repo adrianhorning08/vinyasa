@@ -60,7 +60,7 @@ export class TaskIndex extends React.Component {
           <div className="task-index-header">
             <button onClick={this.addTask}>Add Task</button>
           </div>
-            {Object.values(this.props.tasks.tasks).map(task => {
+            {Object.values(this.props.tasks.tasks).sort((a,b) => b.id - a.id).map(task => {
               return <TaskIndexItem
                 key={task.id}
                 task={task}
