@@ -1,6 +1,6 @@
 # Vinyasa
 
-[Vinyasa live](https://vinyasa.herokuapp.com/#/dashboard)
+[Vinyasa live](https://vinyasa.herokuapp.com/)
 
 Vinyasa is a clone of [Asana](https://asana.com/?utm_source=app.asana.com&utm_campaign=app.asana.com#close)
 It is built with a Rails backend and React/Redux frontend. Authentication implemented using BCyrpt.
