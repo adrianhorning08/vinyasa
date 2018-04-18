@@ -16,7 +16,6 @@ const receiveAllProjects = projects => {
     projects
   };
 };
-// comment
 
 export const fetchProject = (id) => dispatch => {
   return APIutil.fetchProject(id).then(serverProject =>
