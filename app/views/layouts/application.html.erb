@@ -9,6 +9,14 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <% if logged_in? %>
+      <script type="text/javascript">
+          window.currentUser = <%= render(
+            "api/users/user.json.jbuilder",
+            user: payload.user
+          ).html_safe %>
+      </script>
+    <% end %>
   </head>
 
   <body>
